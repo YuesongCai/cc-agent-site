@@ -600,3 +600,13 @@ dialog.modal::backdrop{background:rgba(20,16,24,.5)}
 @keyframes dgflow{0%{cx:42px;opacity:0}12%{opacity:1}88%{opacity:1}100%{cx:97px;opacity:0}}
 .dg-dot{animation:dgflow 3.4s linear infinite}
 @media(prefers-reduced-motion:reduce){.dg-dot{animation:none}}
+
+/* ===== routing-mode glyph flow dots (animated) ===== */
+.mg-flow{fill:var(--plum)}
+.mg-flow.dim{opacity:.5}
+@media(prefers-reduced-motion:reduce){.mg-flow{display:none}}
+/* hero gateway pills: keep inside the box at all widths */
+.dg-gw{min-width:0}
+.dg-gw ul{gap:5px;font-size:9.5px}
+.dg-gw ul li{padding:3px 7px;min-width:0}
+@media(max-width:600px){.dg-row{grid-template-columns:1fr;gap:12px}.dg-wires{display:none}}
