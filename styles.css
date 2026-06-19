@@ -601,10 +601,11 @@ dialog.modal::backdrop{background:rgba(20,16,24,.5)}
 .dg-dot{animation:dgflow 3.4s linear infinite}
 @media(prefers-reduced-motion:reduce){.dg-dot{animation:none}}
 
-/* ===== routing-mode glyph flow dots (animated) ===== */
-.mg-flow{fill:var(--plum)}
-.mg-flow.dim{opacity:.5}
-@media(prefers-reduced-motion:reduce){.mg-flow{display:none}}
+/* ===== routing-mode glyph flow dots (animated, pure CSS) ===== */
+.mg-flowline{fill:none;stroke:var(--plum);stroke-width:2.8;stroke-linecap:round;stroke-dasharray:0.01 10;animation:mgflow 1.3s linear infinite}
+.mg-flowline.dim{stroke-width:2.3;opacity:.5;animation-duration:1.7s}
+@keyframes mgflow{to{stroke-dashoffset:-10}}
+@media(prefers-reduced-motion:reduce){.mg-flowline{animation:none;display:none}}
 /* hero gateway pills: keep inside the box at all widths */
 .dg-gw{min-width:0}
 .dg-gw ul{gap:5px;font-size:9.5px}
