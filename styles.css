@@ -73,7 +73,7 @@ section{padding-block:clamp(3.25rem,6.5vw,5.25rem)}
 /* HOME HERO */
 .hero{padding-top:calc(var(--navh) + clamp(3rem,7vw,5.5rem));padding-bottom:clamp(3rem,6vw,5rem)}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
-.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.5rem,5.1vw,4.2rem);line-height:1.05;letter-spacing:-.02em;margin-top:20px}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.35rem,4.4vw,3.55rem);line-height:1.06;letter-spacing:-.02em;margin-top:20px;text-wrap:balance}
 .hero h1 em{font-style:italic;color:var(--plum)}
 .hero-sub{font-size:19px;line-height:1.6;color:var(--ink-soft);max-width:46ch;margin-top:22px}
 .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
