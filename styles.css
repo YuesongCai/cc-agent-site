@@ -642,3 +642,8 @@ dialog.modal::backdrop{background:rgba(20,16,24,.5)}
   .ppanel.on .bar .fill,.ppanel.on .bar .pct,.ppanel.on .rowt,.ppanel.on .pol,
   .pillar.in .pvf,.pillar.in .pv-audit i,.pv-pipe i{animation:none}
 }
+
+/* mobile fix: no-wrap code blocks must scroll inside their grid column,
+   not stretch the page (grid items default to min-width:auto) */
+.doc-block{min-width:0}
+.codeblock{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
