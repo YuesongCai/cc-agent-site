@@ -2,7 +2,7 @@
    Each page sets <body data-page="home|platform|models|solutions|trust|pricing|docs|other">
    and includes <header id="nav"></header> ... <div id="site-footer"></div>. */
 (function () {
-  var DEMO_EMAIL = 'yuesong.cai@outlook.com';
+  var DEMO_EMAIL = 'cai.yuesong@outlook.com';
   // Optional: paste a Web3Forms access key (free, web3forms.com, verify the address above)
   // to deliver the demo form server-side with no mail client. Empty = mailto fallback.
   var WEB3FORMS_KEY = '';
