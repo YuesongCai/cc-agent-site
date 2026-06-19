@@ -232,7 +232,7 @@ section{padding-block:clamp(3.25rem,6.5vw,5.25rem)}
 .fcol a:hover{color:var(--fg)}
 .fbase{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:24px}
 .fbase .mono{font-family:var(--mono);font-size:12px;color:var(--fg-faint)}
-.flegal{font-size:12.5px;color:var(--fg-faint);max-width:62ch;line-height:1.5}
+.flegal{font-size:11.5px;color:var(--fg-faint);max-width:54ch;line-height:1.5;opacity:.7}
 
 @media (max-width:1024px){
   .tabs{display:none}.nav-toggle{display:block}
@@ -443,7 +443,32 @@ dialog.modal::backdrop{background:rgba(20,16,24,.5)}
 @media(max-width:640px){.fgrid{grid-template-columns:1fr 1fr}.fbrand{grid-column:1/-1}.models-grid,.modes{grid-template-columns:1fr}.rrow{grid-template-columns:1fr auto}.rrow .rprice{display:none}}
 
 /* ===== VISUALIZATION LAYER (icons, flows, glyphs) ===== */
-/* platform architecture — plane icons + role tags */
+/* platform architecture — visual flow diagram */
+.arch-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.arch-layout .head{margin-bottom:0}
+.arch{display:flex;flex-direction:column;align-items:center;max-width:100%;margin:0}
+.arch-end{display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:13px;color:var(--fg-faint);letter-spacing:.03em}
+.arch-pip{width:42px;height:42px;border-radius:999px;border:1.5px solid var(--bd2);display:flex;align-items:center;justify-content:center;font-size:19px;color:var(--accent)}
+.arch-wire{width:1.5px;height:26px;background:var(--bd2)}
+.arch-gw{width:100%;border:1.5px solid var(--bd2);border-radius:22px;padding:24px 22px 22px;display:flex;flex-direction:column;align-items:center}
+.arch-gw-label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.arch-node.card-click{display:flex;align-items:center;gap:14px;padding:14px 18px;border:1px solid var(--bd);border-radius:14px;cursor:pointer;transition:border-color .2s,background .2s;width:100%;background:transparent}
+.arch-node.card-click:hover{border-color:var(--accent);background:rgba(176,127,166,.08);transform:none;box-shadow:none}
+.arch-ico{width:46px;height:46px;border-radius:999px;background:rgba(176,127,166,.12);display:flex;align-items:center;justify-content:center;font-size:21px;color:var(--accent);flex-shrink:0}
+.arch-txt{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+.arch-role{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-faint)}
+.arch-name{font-family:var(--serif);font-size:17px;font-weight:500;color:var(--fg)}
+.arch-arrow{color:var(--fg-faint);font-size:14px;flex-shrink:0;transition:color .2s}
+.arch-node.card-click:hover .arch-arrow{color:var(--accent)}
+.arch-fork{width:52%;height:22px;display:block;margin:2px auto}
+.arch-fork line{stroke:var(--bd2);stroke-width:1.5;fill:none}
+.arch-pair{display:flex;gap:10px;width:100%;align-items:center}
+.arch-pair .arch-node.card-click{flex:1}
+.arch-join{color:var(--fg-faint);font-size:14px;flex-shrink:0}
+.arch-node.card-click .cardetail{display:none}
+@media(max-width:1024px){.arch-layout{grid-template-columns:1fr;gap:32px}}
+@media(max-width:640px){.arch-pair{flex-direction:column}.arch-join{transform:rotate(90deg)}.arch-fork{display:none}}
+/* legacy plane cards (kept for compat) */
 .plane .pl-ic{font-size:23px;color:var(--accent);margin-bottom:14px;display:block}
 .plane .pl-role{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--fg-faint);display:block;margin-bottom:8px}
 .plane-data{border-left:2px solid var(--accent)}

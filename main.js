@@ -22,13 +22,13 @@
   ];
 
   var FOOTER_COLS = [
-    ['Product', [['Platform', 'platform.html'], ['Models', 'models.html'], ['Pricing', 'pricing.html'], ['Docs', 'docs.html']]],
-    ['Company', [['About', 'company.html'], ['Solutions', 'solutions.html'], ['Careers', 'careers.html']]],
-    ['Trust', [['Trust center', 'trust.html'], ['Security', 'security.html'], ['Status', 'status.html']]],
-    ['Legal', [['Privacy', 'privacy.html'], ['Terms', 'terms.html'], ['Contact', 'mailto:' + DEMO_EMAIL]]],
+    ['Product', [['Platform', 'platform.html'], ['Models', 'models.html'], ['Pricing', 'pricing.html']]],
+    ['Company', [['About', 'company.html'], ['Careers', 'careers.html']]],
+    ['Trust', [['Trust center', 'trust.html'], ['Security', 'security.html']]],
+    ['Legal', [['Privacy', 'privacy.html'], ['Terms', 'terms.html'], ['Contact', 'contact.html']]],
   ];
 
-  var REGION_LINE = 'CC Agent speaks the Anthropic Messages and OpenAI-compatible APIs and is model-agnostic by design. The live catalog is Anthropic Claude on Amazon Bedrock (multi-region) with Anthropic Direct failover; more models come online as authorized. Managed channel availability is subject to AWS and Anthropic official authorization and per-model limits. Infrastructure runs in the AWS global partition; no China-region deployment. This site does not provide investment or legal advice.';
+  var REGION_LINE = 'Claude on Amazon Bedrock (multi-region) with Anthropic Direct failover. Channel availability subject to AWS and Anthropic authorization. AWS global partition; no China-region deployment.';
 
   function el(html) { var t = document.createElement('template'); t.innerHTML = html.trim(); return t.content.firstChild; }
 
