@@ -647,3 +647,8 @@ dialog.modal::backdrop{background:rgba(20,16,24,.5)}
    not stretch the page (grid items default to min-width:auto) */
 .doc-block{min-width:0}
 .codeblock{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+
+/* button arrow: gentle rightward nudge on hover/focus */
+.btn i.ph-arrow-right{transition:transform .22s cubic-bezier(.2,.8,.2,1)}
+.btn:hover i.ph-arrow-right,.btn:focus-visible i.ph-arrow-right{transform:translateX(5px)}
+@media(prefers-reduced-motion:reduce){.btn i.ph-arrow-right{transition:none}.btn:hover i.ph-arrow-right,.btn:focus-visible i.ph-arrow-right{transform:none}}
