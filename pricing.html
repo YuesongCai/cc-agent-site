@@ -4,24 +4,24 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Pricing · CC Agent — bring your own Bedrock, or managed</title>
-<meta name="description" content="Two ways to run CC Agent: bring your own Amazon Bedrock account, or run on our managed infrastructure. Transparent and reconcilable, with no token markup on BYOA." />
+<meta name="description" content="Two ways to run CC Agent: bring your own Amazon Bedrock account, or fully managed. Transparent, reconcilable, no token markup on bring-your-own." />
 <meta name="keywords" content="AI gateway pricing, Amazon Bedrock pricing, no token markup, managed AI gateway, BYOA, enterprise AI pricing" />
 <meta name="author" content="CC Agent" />
 <meta name="robots" content="index, follow" />
 <meta name="theme-color" content="#F1EEEF" />
-<link rel="canonical" href="https://ccagent.example/pricing.html" />
+<link rel="canonical" href="https://yuesongcai.github.io/cc-agent-site/pricing.html" />
 <meta property="og:site_name" content="CC Agent" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Pricing · CC Agent" />
 <meta property="og:description" content="Two ways to run it: bring your own Bedrock, or managed. Transparent either way." />
-<meta property="og:url" content="https://ccagent.example/pricing.html" />
-<meta property="og:image" content="https://ccagent.example/og.svg" />
+<meta property="og:url" content="https://yuesongcai.github.io/cc-agent-site/pricing.html" />
+<meta property="og:image" content="https://yuesongcai.github.io/cc-agent-site/og.svg" />
 <meta property="og:image:alt" content="CC Agent pricing" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Pricing · CC Agent" />
 <meta name="twitter:description" content="Bring your own Bedrock, or managed. Transparent either way." />
-<meta name="twitter:image" content="https://ccagent.example/og.svg" />
+<meta name="twitter:image" content="https://yuesongcai.github.io/cc-agent-site/og.svg" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='3.5' y='3.5' width='41' height='41' rx='13' fill='none' stroke='%237A4A72' stroke-width='2.6'/%3E%3Cpath d='M15 24H25M25 24C30 24 30 14.5 34.5 14.5M25 24H34.5M25 24C30 24 30 33.5 34.5 33.5' fill='none' stroke='%237A4A72' stroke-width='2.4' stroke-linecap='round'/%3E%3Cg fill='%237A4A72'%3E%3Ccircle cx='15' cy='24' r='2.8'/%3E%3Ccircle cx='35.5' cy='14.5' r='2.5'/%3E%3Ccircle cx='35.5' cy='24' r='2.5'/%3E%3Ccircle cx='35.5' cy='33.5' r='2.5'/%3E%3C/g%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,9 +30,9 @@
 <link rel="stylesheet" href="styles.css?v=20260619i" />
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"Organization","@id":"https://ccagent.example/#org","name":"CC Agent","url":"https://ccagent.example/","logo":"https://ccagent.example/og.svg"},
-{"@type":"WebPage","@id":"https://ccagent.example/pricing.html","url":"https://ccagent.example/pricing.html","name":"Pricing · CC Agent","isPartOf":{"@id":"https://ccagent.example/#site"},"publisher":{"@id":"https://ccagent.example/#org"}},
-{"@type":"FAQPage","@id":"https://ccagent.example/pricing.html#faq","mainEntity":[
+{"@type":"Organization","@id":"https://yuesongcai.github.io/cc-agent-site/#org","name":"CC Agent","url":"https://yuesongcai.github.io/cc-agent-site/","logo":"https://yuesongcai.github.io/cc-agent-site/og.svg"},
+{"@type":"WebPage","@id":"https://yuesongcai.github.io/cc-agent-site/pricing.html","url":"https://yuesongcai.github.io/cc-agent-site/pricing.html","name":"Pricing · CC Agent","isPartOf":{"@id":"https://yuesongcai.github.io/cc-agent-site/#site"},"publisher":{"@id":"https://yuesongcai.github.io/cc-agent-site/#org"}},
+{"@type":"FAQPage","@id":"https://yuesongcai.github.io/cc-agent-site/pricing.html#faq","mainEntity":[
 {"@type":"Question","name":"Do you mark up tokens?","acceptedAnswer":{"@type":"Answer","text":"On bring-your-own-Bedrock, no. You pay AWS directly and we charge for the platform by seat and usage. On the managed path, pricing is transparent and reconcilable, and channel availability is subject to AWS and Anthropic official authorization and per-model limits."}},
 {"@type":"Question","name":"Where does my data go?","acceptedAnswer":{"@type":"Answer","text":"To the regions your policy allows. Routing is in-region by default with no silent cross-border hops, and upstream credentials live in a managed secrets vault. PII guardrails run in the data path."}},
 {"@type":"Question","name":"Which models can I use?","acceptedAnswer":{"@type":"Answer","text":"Anthropic Claude on Amazon Bedrock today, across multiple regions, with Anthropic Direct failover. CC Agent is model-agnostic by design, so more providers come online as authorized. You set a model allowlist per project."}},

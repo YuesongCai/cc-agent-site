@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ccagent.example/sitemap.xml
+Sitemap: https://yuesongcai.github.io/cc-agent-site/sitemap.xml
