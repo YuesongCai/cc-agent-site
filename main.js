@@ -19,11 +19,10 @@
   ];
 
   var FOOTER_COLS = [
-    ['Product', [['Platform', 'platform.html'], ['Models', 'models.html'], ['Pricing', 'pricing.html'], ['Docs', 'docs.html'], ['Status', 'status.html']]],
-    ['Solutions', [['Financial services', 'solutions.html#financial-services'], ['Cross-border software', 'solutions.html#cross-border'], ['Regulated enterprises', 'solutions.html#regulated'], ['Offshore R&D', 'solutions.html#offshore']]],
-    ['Trust & security', [['Trust center', 'trust.html'], ['Security', 'security.html'], ['Audit & compliance', 'trust.html#record'], ['What we will not do', 'trust.html#honesty']]],
-    ['Company', [['About', 'company.html'], ['Careers', 'careers.html'], ['Contact', 'mailto:' + DEMO_EMAIL]]],
-    ['Legal', [['Privacy', 'privacy.html'], ['Terms', 'terms.html'], ['Acceptable use', 'terms.html#aup']]],
+    ['Product', [['Platform', 'platform.html'], ['Models', 'models.html'], ['Pricing', 'pricing.html'], ['Docs', 'docs.html']]],
+    ['Company', [['About', 'company.html'], ['Solutions', 'solutions.html'], ['Careers', 'careers.html']]],
+    ['Trust', [['Trust center', 'trust.html'], ['Security', 'security.html'], ['Status', 'status.html']]],
+    ['Legal', [['Privacy', 'privacy.html'], ['Terms', 'terms.html'], ['Contact', 'mailto:' + DEMO_EMAIL]]],
   ];
 
   var REGION_LINE = 'CC Agent speaks the Anthropic Messages and OpenAI-compatible APIs and is model-agnostic by design. The live catalog is Anthropic Claude on Amazon Bedrock (multi-region) with Anthropic Direct failover; more models come online as authorized. Managed channel availability is subject to AWS and Anthropic official authorization and per-model limits. Infrastructure runs in the AWS global partition; no China-region deployment. This site does not provide investment or legal advice.';
