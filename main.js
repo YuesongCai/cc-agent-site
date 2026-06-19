@@ -69,8 +69,15 @@
 
     // mobile toggle
     var t = host.querySelector('#navToggle'), m = host.querySelector('#navMobile');
-    t.addEventListener('click', function () { var o = m.classList.toggle('open'); t.setAttribute('aria-expanded', String(o)); });
-    m.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { m.classList.remove('open'); }); });
+    function setMenu(open) {
+      m.classList.toggle('open', open);
+      t.setAttribute('aria-expanded', String(open));
+      t.innerHTML = open ? '<i class="ph ph-x"></i>' : '<i class="ph ph-list"></i>';
+      document.body.style.overflow = open ? 'hidden' : '';
+    }
+    t.addEventListener('click', function () { setMenu(!m.classList.contains('open')); });
+    m.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setMenu(false); }); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && m.classList.contains('open')) setMenu(false); });
 
     // desktop dropdowns: hover via CSS; click/touch + keyboard via JS
     var groups = host.querySelectorAll('.navgroup');
@@ -165,7 +172,8 @@
     var demo = document.getElementById('demoModal');
     if (demo) {
       wireDialogDismiss(demo);
-      document.querySelectorAll('.js-demo').forEach(function (b) { b.addEventListener('click', function () { openDialog(demo); }); });
+      // delegated so dynamically-injected .js-demo buttons (e.g. the atlas panel) also work
+      document.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('.js-demo')) openDialog(demo); });
       var form = demo.querySelector('#demoForm'), ok = demo.querySelector('.demo-ok');
       form.addEventListener('submit', function (e) {
         e.preventDefault();
@@ -243,9 +251,73 @@
     });
   }
 
+  // ---- MODELS "ROUTING ATLAS": master/detail provider explorer ----
+  var PROVIDERS = [
+    { id: 'anthropic', name: 'Anthropic', logo: 'logos/anthropic.svg', status: 'live',
+      blurb: 'Claude on Amazon Bedrock, across regions, with Anthropic Direct failover.',
+      specs: { Models: 'Opus 4.x · Sonnet · Haiku', Regions: 'us-east-1 · ap-northeast-1', Context: '200K tokens', Failover: 'Anthropic Direct', Channel: 'Amazon Bedrock · live' },
+      routing: [['Claude Opus', 'Bedrock · us-east-1', '$5 / $25'], ['Claude Sonnet', 'Bedrock · ap-northeast-1', '$3 / $15'], ['Claude Haiku', 'Bedrock · us-east-1', '$1 / $5']] },
+    { id: 'openai', name: 'OpenAI', logo: 'logos/openai.svg', status: 'soon',
+      blurb: 'General-purpose models for chat and agent workloads.',
+      specs: { Models: 'GPT family', Regions: '—', Pricing: '—' } },
+    { id: 'google', name: 'Google', logo: 'logos/google.svg', status: 'soon',
+      blurb: 'Multimodal models with long-context reasoning.',
+      specs: { Models: 'Gemini family', Regions: '—', Pricing: '—' } },
+    { id: 'meta', name: 'Meta', logo: 'logos/meta.svg', status: 'soon',
+      blurb: 'Open-weight models for flexible deployment.',
+      specs: { Models: 'Llama family', Regions: '—', Pricing: '—' } },
+    { id: 'mistral', name: 'Mistral AI', logo: 'logos/mistral.svg', status: 'soon',
+      blurb: 'Efficient open models tuned for throughput.',
+      specs: { Models: 'Mistral family', Regions: '—', Pricing: '—' } },
+  ];
+  function wireAtlas() {
+    var rail = document.querySelector('.atlas-rail'), detail = document.getElementById('atlasDetail');
+    if (!rail || !detail) return;
+    function render(p) {
+      var live = p.status === 'live';
+      var specs = Object.keys(p.specs).map(function (k) {
+        return '<div class="srow"><span class="sk">' + k + '</span><span class="sv">' + p.specs[k] + '</span></div>';
+      }).join('');
+      var tail;
+      if (live) {
+        var rows = p.routing.map(function (r) {
+          return '<div class="rrow"><span class="rp"><i class="ph ph-check-circle"></i>' + r[0] + '</span><span class="rm">' + r[1] + '</span><span class="rprice">' + r[2] + '</span></div>';
+        }).join('');
+        tail = '<div class="rtable"><div class="rrow h"><span>Provider</span><span>Region / account</span><span class="rprice">In / Out $/M</span></div>' + rows + '</div>' +
+          '<p class="rcap">Anthropic list prices, illustrative. The same fields — vendor / model / region / account — are recorded per call and exportable. See <a href="trust.html#record">Trust</a>.</p>';
+      } else {
+        tail = '<div class="atlas-soonbox"><p>Not a live integration. Added under your AWS and Anthropic authorization, subject to per-model limits.</p>' +
+          '<button class="btn btn-ghost btn-sm js-demo" type="button">Talk to us about ' + p.name + ' <i class="ph ph-arrow-right"></i></button></div>';
+      }
+      detail.classList.add('swap');
+      detail.innerHTML = '<div class="ad-head"><span class="plogo lg"><img src="' + p.logo + '" alt=""></span>' +
+        '<div><h3>' + p.name + '</h3><span class="avail ' + (live ? 'live' : 'soon') + '">' + (live ? 'available' : 'added as authorized') + '</span></div></div>' +
+        '<p class="ad-blurb">' + p.blurb + '</p><div class="atlas-specs">' + specs + '</div>' + tail;
+      requestAnimationFrame(function () { detail.classList.remove('swap'); });
+    }
+    var rows = [].slice.call(rail.querySelectorAll('.prow'));
+    function select(b, focus) {
+      rows.forEach(function (x) { x.classList.remove('on'); x.setAttribute('aria-selected', 'false'); });
+      b.classList.add('on'); b.setAttribute('aria-selected', 'true');
+      var p = PROVIDERS.filter(function (x) { return x.id === b.getAttribute('data-id'); })[0];
+      if (p) render(p);
+      if (focus) b.focus();
+    }
+    rows.forEach(function (b, i) {
+      b.addEventListener('click', function () { select(b); });
+      b.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); select(b); }
+        else if (e.key === 'ArrowDown' || e.key === 'ArrowRight') { e.preventDefault(); select(rows[(i + 1) % rows.length], true); }
+        else if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') { e.preventDefault(); select(rows[(i - 1 + rows.length) % rows.length], true); }
+      });
+    });
+    var on = rail.querySelector('.prow.on') || rows[0];
+    if (on) { var p0 = PROVIDERS.filter(function (x) { return x.id === on.getAttribute('data-id'); })[0]; if (p0) render(p0); }
+  }
+
   function init() {
     buildNav(); buildFooter(); buildModals();
-    wireModals(); wireTabs(); wireFaq(); wireMarquee(); wireReveal();
+    wireModals(); wireTabs(); wireFaq(); wireMarquee(); wireAtlas(); wireReveal();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();

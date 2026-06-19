@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
-<link rel="stylesheet" href="styles.css?v=20260619f" />
+<link rel="stylesheet" href="styles.css?v=20260619g" />
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://ccagent.example/#org","name":"CC Agent","url":"https://ccagent.example/","logo":"https://ccagent.example/og.svg"},{"@type":"WebPage","@id":"https://ccagent.example/models.html","url":"https://ccagent.example/models.html","name":"Models · CC Agent","isPartOf":{"@id":"https://ccagent.example/#site"},"description":"Claude Opus, Sonnet, and Haiku are live on Amazon Bedrock across regions with Anthropic Direct failover. CC Agent is model-agnostic by design, with more providers added as they are authorized.","publisher":{"@id":"https://ccagent.example/#org"}}]}
 </script>
@@ -47,96 +47,47 @@
   </div>
 </section>
 
-<section id="available">
+<section id="atlas">
   <div class="wrap">
     <div class="head reveal">
-      <p class="eyebrow">Available now</p>
-      <h2 class="stitle">Live on Bedrock,<br>across <em>regions.</em></h2>
-      <p class="ssub">Claude Opus, Sonnet, and Haiku, served on Amazon Bedrock with Anthropic Direct failover.</p>
-    </div>
-    <div class="models-grid">
-      <div class="mcard reveal">
-        <div class="mtop">
-          <div><h3>Claude Opus 4.x</h3><div class="mvendor">Anthropic · Bedrock</div></div>
-          <span class="avail live">available</span>
-        </div>
-        <p>Top-tier reasoning for complex agents.</p>
-        <div class="mmeta"><span>us-east-1 · ap-northeast-1</span><span>200K context</span></div>
-      </div>
-      <div class="mcard reveal">
-        <div class="mtop">
-          <div><h3>Claude Sonnet</h3><div class="mvendor">Anthropic · Bedrock</div></div>
-          <span class="avail live">available</span>
-        </div>
-        <p>Balanced speed and quality, the everyday workhorse.</p>
-        <div class="mmeta"><span>us-east-1 · ap-northeast-1</span><span>200K context</span></div>
-      </div>
-      <div class="mcard reveal">
-        <div class="mtop">
-          <div><h3>Claude Haiku</h3><div class="mvendor">Anthropic · Bedrock</div></div>
-          <span class="avail live">available</span>
-        </div>
-        <p>Fast and economical for high-volume calls.</p>
-        <div class="mmeta"><span>us-east-1 · ap-northeast-1</span><span>200K context</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="roadmap" class="dark">
-  <div class="wrap">
-    <div class="head reveal">
-      <p class="eyebrow">On the roadmap</p>
-      <h2 class="stitle">More providers,<br>as <em>authorized.</em></h2>
-      <p class="ssub">Model-agnostic by design via an open vendor schema. Added as authorized.</p>
-    </div>
-    <div class="models-grid">
-      <div class="mcard reveal soon">
-        <div class="mtop">
-          <div><h3>GPT</h3><div class="mvendor">OpenAI</div></div>
-          <span class="avail soon">soon</span>
-        </div>
-        <p>General-purpose models for chat and agent workloads.</p>
-      </div>
-      <div class="mcard reveal soon">
-        <div class="mtop">
-          <div><h3>Gemini</h3><div class="mvendor">Google</div></div>
-          <span class="avail soon">soon</span>
-        </div>
-        <p>Multimodal models with long-context reasoning.</p>
-      </div>
-      <div class="mcard reveal soon">
-        <div class="mtop">
-          <div><h3>Llama</h3><div class="mvendor">Meta</div></div>
-          <span class="avail soon">soon</span>
-        </div>
-        <p>Open-weight models for flexible deployment.</p>
-      </div>
-      <div class="mcard reveal soon">
-        <div class="mtop">
-          <div><h3>Mistral</h3><div class="mvendor">Mistral AI</div></div>
-          <span class="avail soon">soon</span>
-        </div>
-        <p>Efficient open models tuned for throughput.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="routing">
-  <div class="wrap">
-    <div class="head reveal">
-      <p class="eyebrow">Provider routing</p>
+      <p class="eyebrow">The routing atlas</p>
       <h2 class="stitle">One catalog,<br>every <em>upstream.</em></h2>
-      <p class="ssub">Each call routes to a named provider, region, and account, recorded for reconciliation.</p>
+      <p class="ssub">Claude on Amazon Bedrock is live today. CC Agent is model-agnostic by design, so every other provider maps into the same compliant API as it is authorized. Pick a provider to see how it routes.</p>
     </div>
-    <div class="rtable reveal">
-      <div class="rrow h"><span>Provider</span><span>Region / account</span><span class="rprice">In / Out $/M</span></div>
-      <div class="rrow"><span class="rp"><i class="ph ph-check-circle"></i>Claude Opus</span><span class="rm">Bedrock · us-east-1</span><span class="rprice">$5 / $25</span></div>
-      <div class="rrow"><span class="rp"><i class="ph ph-check-circle"></i>Claude Sonnet</span><span class="rm">Bedrock · ap-northeast-1</span><span class="rprice">$3 / $15</span></div>
-      <div class="rrow"><span class="rp"><i class="ph ph-check-circle"></i>Claude Haiku</span><span class="rm">Bedrock · us-east-1</span><span class="rprice">$1 / $5</span></div>
+    <div class="atlas reveal">
+      <div class="atlas-rail" role="tablist" aria-label="Providers">
+        <p class="rail-group">Live on Bedrock</p>
+        <button class="prow on" role="tab" type="button" data-id="anthropic" aria-selected="true">
+          <span class="plogo"><img src="logos/anthropic.svg" alt=""></span>
+          <span class="pname">Anthropic<span class="psub">3 models · Bedrock</span></span>
+          <span class="pdot live"></span>
+        </button>
+        <hr class="rail-div">
+        <p class="rail-group muted">Available as authorized</p>
+        <button class="prow" role="tab" type="button" data-id="openai" aria-selected="false">
+          <span class="plogo"><img src="logos/openai.svg" alt=""></span>
+          <span class="pname">OpenAI<span class="psub">Roadmap</span></span>
+          <span class="pdot soon"></span>
+        </button>
+        <button class="prow" role="tab" type="button" data-id="google" aria-selected="false">
+          <span class="plogo"><img src="logos/google.svg" alt=""></span>
+          <span class="pname">Google<span class="psub">Roadmap</span></span>
+          <span class="pdot soon"></span>
+        </button>
+        <button class="prow" role="tab" type="button" data-id="meta" aria-selected="false">
+          <span class="plogo"><img src="logos/meta.svg" alt=""></span>
+          <span class="pname">Meta<span class="psub">Roadmap</span></span>
+          <span class="pdot soon"></span>
+        </button>
+        <button class="prow" role="tab" type="button" data-id="mistral" aria-selected="false">
+          <span class="plogo"><img src="logos/mistral.svg" alt=""></span>
+          <span class="pname">Mistral AI<span class="psub">Roadmap</span></span>
+          <span class="pdot soon"></span>
+        </button>
+        <p class="rail-cap">The model landscape CC Agent is built to route across &mdash; not partners or endorsements.</p>
+      </div>
+      <div class="atlas-detail" id="atlasDetail" aria-live="polite"></div>
     </div>
-    <p class="rcap">Anthropic list prices, illustrative. The same fields, vendor / model / region / account, are recorded per call and exportable. See <a href="trust.html#record">Trust</a>.</p>
   </div>
 </section>
 
@@ -207,6 +158,6 @@
 </main>
 
 <div id="site-footer"></div>
-<script src="main.js?v=20260619f"></script>
+<script src="main.js?v=20260619g"></script>
 </body>
 </html>
