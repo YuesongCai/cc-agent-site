@@ -9,13 +9,16 @@
 
   var MARK = '<svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor"><rect x="3.5" y="3.5" width="41" height="41" rx="13" stroke-width="2.4"/><path d="M15 24H25M25 24C30 24 30 14.5 34.5 14.5M25 24H34.5M25 24C30 24 30 33.5 34.5 33.5" stroke-width="2.2" stroke-linecap="round"/></g><g fill="currentColor"><circle cx="15" cy="24" r="2.7"/><circle cx="35.5" cy="14.5" r="2.4"/><circle cx="35.5" cy="24" r="2.4"/><circle cx="35.5" cy="33.5" r="2.4"/></g></svg>';
 
-  var NAV_ITEMS = [
-    ['home', 'index.html', 'Home'],
-    ['platform', 'platform.html', 'Platform'],
-    ['models', 'models.html', 'Models'],
-    ['solutions', 'solutions.html', 'Solutions'],
-    ['trust', 'trust.html', 'Trust'],
-    ['pricing', 'pricing.html', 'Pricing'],
+  // [label, key, href (direct link), menu (dropdown)]; menu item = [key, href, title, desc]
+  var NAV = [
+    ['Product', 'product', null, [
+      ['platform', 'platform.html', 'Platform', 'One control plane for every model call'],
+      ['models', 'models.html', 'Models', 'Every model behind one compliant API'],
+      ['pricing', 'pricing.html', 'Pricing', 'Bring your own Bedrock, or fully managed'],
+      ['docs', 'docs.html', 'Docs', 'Quickstart and the API reference'],
+    ]],
+    ['Solutions', 'solutions', 'solutions.html', null],
+    ['Trust', 'trust', 'trust.html', null],
   ];
 
   var FOOTER_COLS = [
@@ -34,10 +37,24 @@
     var host = document.getElementById('nav');
     if (!host) return;
     var page = document.body.getAttribute('data-page') || '';
-    var tabs = NAV_ITEMS.map(function (i) {
-      return '<a href="' + i[1] + '"' + (i[0] === page ? ' class="on"' : '') + '>' + i[2] + '</a>';
+    var mobItems = [];
+    var tabs = NAV.map(function (g) {
+      var label = g[0], key = g[1], href = g[2], menu = g[3];
+      if (menu) {
+        var active = menu.some(function (m) { return m[0] === page; });
+        var links = menu.map(function (m) {
+          mobItems.push([m[2], m[1]]);
+          return '<a class="navlink' + (m[0] === page ? ' on' : '') + '" href="' + m[1] + '" role="menuitem">' +
+            '<span class="nl-t">' + m[2] + '</span><span class="nl-d">' + m[3] + '</span></a>';
+        }).join('');
+        return '<div class="navgroup' + (active ? ' on' : '') + '">' +
+          '<button class="navtop navtrig" type="button" aria-haspopup="true" aria-expanded="false">' + label + ' <i class="ph ph-caret-down caret"></i></button>' +
+          '<div class="navpanel" role="menu">' + links + '</div></div>';
+      }
+      mobItems.push([label, href]);
+      return '<a class="navtop' + (key === page ? ' on' : '') + '" href="' + href + '">' + label + '</a>';
     }).join('');
-    var mob = NAV_ITEMS.map(function (i) { return '<a href="' + i[1] + '">' + i[2] + '</a>'; }).join('');
+    var mob = mobItems.map(function (i) { return '<a href="' + i[1] + '">' + i[0] + '</a>'; }).join('');
     host.className = 'nav';
     host.innerHTML =
       '<div class="wrap nav-inner">' +
@@ -50,9 +67,27 @@
       '</div>' +
       '<div class="nav-mobile" id="navMobile">' + mob + '<button class="btn btn-primary js-demo" type="button">Book a demo</button></div>';
 
+    // mobile toggle
     var t = host.querySelector('#navToggle'), m = host.querySelector('#navMobile');
     t.addEventListener('click', function () { var o = m.classList.toggle('open'); t.setAttribute('aria-expanded', String(o)); });
     m.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { m.classList.remove('open'); }); });
+
+    // desktop dropdowns: hover via CSS; click/touch + keyboard via JS
+    var groups = host.querySelectorAll('.navgroup');
+    function closeGroups(except) {
+      groups.forEach(function (o) { if (o !== except) { o.classList.remove('open'); o.querySelector('.navtrig').setAttribute('aria-expanded', 'false'); } });
+    }
+    groups.forEach(function (g) {
+      var trig = g.querySelector('.navtrig');
+      trig.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var open = g.classList.toggle('open');
+        trig.setAttribute('aria-expanded', String(open));
+        closeGroups(g);
+      });
+    });
+    document.addEventListener('click', function (e) { if (!e.target.closest('.navgroup')) closeGroups(null); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeGroups(null); });
   }
 
   // ---- FOOTER ----

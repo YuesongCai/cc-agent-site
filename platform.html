@@ -44,7 +44,7 @@
   <div class="wrap">
     <p class="eyebrow reveal">The platform</p>
     <h1 class="reveal">One control plane for<br>every model <em>call.</em></h1>
-    <p class="psub reveal">A governance layer between your agents and every model. Compliance and cost control live in the data path, not in a dashboard you check later.</p>
+    <p class="psub reveal">A governance layer that sits between your agents and every model. Compliance and cost control happen on each call as it passes through — not in a dashboard you check after the money is spent.</p>
     <div class="pacts reveal">
       <button class="btn btn-primary js-demo" type="button">Book a demo <i class="ph ph-arrow-right"></i></button>
       <a class="btn btn-ghost" href="docs.html">Read the docs</a>
@@ -117,21 +117,21 @@
 <section id="architecture" class="dark">
   <div class="wrap">
     <div class="head reveal">
-      <p class="eyebrow">Architecture</p>
-      <h2 class="stitle">A stateless gateway,<br>split clean.</h2>
-      <p class="ssub">A self-built Go data plane carries the agent traffic; a separate control plane runs policy, identity, and billing. Reconcilable cost is a ground rule.</p>
+      <p class="eyebrow">How it's built</p>
+      <h2 class="stitle">Built to be <em>reconciled.</em></h2>
+      <p class="ssub">Two systems do the work, like a bank: one carries every model request fast, the other holds the rules and the records. Nothing about your spend is invented after the fact — every charge traces back to the model's own count.</p>
     </div>
     <div class="planes">
-      <div class="plane reveal"><div class="k">Data plane · Go</div><div class="t">auth · limits · guardrails · routing · streaming passthrough · metering · audit</div></div>
-      <div class="plane reveal"><div class="k">Control plane · NestJS</div><div class="t">tenant / project / key · routing policy · upstream vault · KYC · billing</div></div>
-      <div class="plane reveal"><div class="k">Storage</div><div class="t">PostgreSQL · ClickHouse · Redis · managed secrets vault</div></div>
-      <div class="plane reveal"><div class="k">Upstream</div><div class="t">Pluggable upstream adapters (open vendor schema). Bedrock multi-region + Anthropic Direct today.</div></div>
+      <div class="plane reveal"><h3 class="pl-t">The fast lane</h3><p class="pl-b">The part your agents actually talk to. It carries each request to the model and streams the answer straight back, untouched, while quietly applying your limits.</p><span class="k">Go · stateless</span></div>
+      <div class="plane reveal"><h3 class="pl-t">The rule book</h3><p class="pl-b">A separate system that decides who may call which model, sets the budgets, vets each customer, and runs the billing — kept away from live traffic.</p><span class="k">NestJS control plane</span></div>
+      <div class="plane reveal"><h3 class="pl-t">The record room</h3><p class="pl-b">Where settings, usage history, running cost totals, and credentials are kept — detailed enough to reconcile every charge, with secrets held in a managed vault.</p><span class="k">PostgreSQL · ClickHouse · Redis · secrets vault</span></div>
+      <div class="plane reveal"><h3 class="pl-t">The model shelf</h3><p class="pl-b">The connections out to the models you're cleared to use, built to add new providers without a rebuild. Claude on Amazon Bedrock and Anthropic Direct are live today.</p><span class="k">Pluggable adapters · open vendor schema</span></div>
     </div>
     <ol class="life">
-      <li class="reveal"><div class="n">01</div><h3>Authenticate</h3><p>Virtual key stored as a hash only, bound to a vetted legal entity.</p></li>
-      <li class="reveal"><div class="n">02</div><h3>Limit &amp; budget</h3><p>Bucketed sliding window for rate, dual monthly budget gates.</p></li>
-      <li class="reveal"><div class="n">03</div><h3>Route &amp; stream</h3><p>Declarative routing to the chosen upstream, responses streamed through unmodified.</p></li>
-      <li class="reveal"><div class="n">04</div><h3>Meter &amp; audit</h3><p>Usage taken from the upstream response, written and tagged for reconciliation.</p></li>
+      <li class="reveal"><div class="n">01</div><h3>Check the caller</h3><p>Each call arrives with a key tied to a real, vetted company — and we only ever store a scrambled copy of that key, never the original.</p></li>
+      <li class="reveal"><div class="n">02</div><h3>Hold the line</h3><p>Before anything runs, we check the call against its rate limit and its monthly budget, so spend can't quietly run away.</p></li>
+      <li class="reveal"><div class="n">03</div><h3>Send it through</h3><p>The call goes to the model you chose for that job, and the reply streams back to your agent exactly as the model sent it.</p></li>
+      <li class="reveal"><div class="n">04</div><h3>Count it honestly</h3><p>We record the real usage straight from the model's own response and tag it, so every line on your bill can be traced back and checked.</p></li>
     </ol>
   </div>
 </section>
