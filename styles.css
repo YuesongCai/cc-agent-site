@@ -432,6 +432,8 @@ dialog.modal::backdrop{background:rgba(20,16,24,.5)}
 .prose p{font-size:16px;color:var(--fg-soft);line-height:1.75;margin-bottom:14px}
 .prose ul{margin:0 0 16px;padding-left:20px}
 .prose ul li{font-size:16px;color:var(--fg-soft);line-height:1.7;margin-bottom:6px}
+.prose ul.ticks{padding-left:0;margin-top:10px}
+.prose ul.ticks li{margin-bottom:0}
 .prose .meta{font-family:var(--mono);font-size:12px;color:var(--fg-faint);margin-bottom:26px}
 .prose a{color:var(--plum)}
 
