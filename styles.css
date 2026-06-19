@@ -611,3 +611,34 @@ dialog.modal::backdrop{background:rgba(20,16,24,.5)}
 .dg-gw ul{gap:5px;font-size:9.5px}
 .dg-gw ul li{padding:3px 7px;min-width:0}
 @media(max-width:600px){.dg-row{grid-template-columns:1fr;gap:12px}.dg-wires{display:none}}
+
+/* ===== content reveal micro-animations (product preview + pillars) ===== */
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes rowin{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+@keyframes pop{0%{opacity:0;transform:scale(.6)}60%{transform:scale(1.12)}100%{opacity:1;transform:scale(1)}}
+@keyframes pipeflow{0%,100%{opacity:.35;transform:translateX(0)}50%{opacity:1;transform:translateX(3px)}}
+.bar .fill,.pvf{transform-origin:left}
+/* product preview: bars grow + rows stagger in when a panel opens */
+.ppanel.on .bar .fill{animation:grow .8s cubic-bezier(.2,.8,.2,1) both}
+.ppanel.on .bar:nth-child(3) .fill{animation-delay:.07s}
+.ppanel.on .bar:nth-child(4) .fill{animation-delay:.14s}
+.ppanel.on .bar:nth-child(5) .fill{animation-delay:.21s}
+.ppanel.on .bar .pct{animation:rowin .5s ease both;animation-delay:.25s}
+.ppanel.on .rowt:not(.h){animation:rowin .5s ease both}
+.ppanel.on .rowt:nth-child(3){animation-delay:.08s}
+.ppanel.on .rowt:nth-child(4){animation-delay:.16s}
+.ppanel.on .pol{animation:rowin .5s ease both}
+.ppanel.on .pol:nth-child(3){animation-delay:.08s}
+.ppanel.on .pol:nth-child(4){animation-delay:.16s}
+.ppanel.on .pol:nth-child(5){animation-delay:.24s}
+/* committee pillars: viz animates in on scroll-reveal */
+.pillar.in .pvf{animation:grow .85s cubic-bezier(.2,.8,.2,1) .18s both}
+.pillar.in .pv-bars .pvb:nth-child(2) .pvf{animation-delay:.32s}
+.pillar.in .pv-bars .pvb:nth-child(3) .pvf{animation-delay:.46s}
+.pillar.in .pv-audit i{animation:pop .55s cubic-bezier(.2,.8,.2,1) .25s both}
+.pv-pipe i{animation:pipeflow 1.9s ease-in-out infinite}
+.pv-pipe i:last-of-type{animation-delay:.5s}
+@media(prefers-reduced-motion:reduce){
+  .ppanel.on .bar .fill,.ppanel.on .bar .pct,.ppanel.on .rowt,.ppanel.on .pol,
+  .pillar.in .pvf,.pillar.in .pv-audit i,.pv-pipe i{animation:none}
+}
