@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Terms of service · CC Agent</title>
+<meta name="description" content="The basics of using CC Agent, plus our acceptable use policy. Use of the service, accounts and entities, acceptable use, channel availability, and disclaimers." />
+<meta name="author" content="CC Agent" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#F1EEEF" />
+<link rel="canonical" href="https://ccagent.example/terms.html" />
+<meta property="og:site_name" content="CC Agent" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Terms of service · CC Agent" />
+<meta property="og:description" content="The basics of using CC Agent, plus our acceptable use policy. Use of the service, accounts and entities, acceptable use, channel availability, and disclaimers." />
+<meta property="og:url" content="https://ccagent.example/terms.html" />
+<meta property="og:image" content="https://ccagent.example/og.svg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Terms of service · CC Agent" />
+<meta name="twitter:description" content="The basics of using CC Agent, plus our acceptable use policy. Use of the service, accounts and entities, acceptable use, channel availability, and disclaimers." />
+<meta name="twitter:image" content="https://ccagent.example/og.svg" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='3.5' y='3.5' width='41' height='41' rx='13' fill='none' stroke='%237A4A72' stroke-width='2.6'/%3E%3Cpath d='M15 24H25M25 24C30 24 30 14.5 34.5 14.5M25 24H34.5M25 24C30 24 30 33.5 34.5 33.5' fill='none' stroke='%237A4A72' stroke-width='2.4' stroke-linecap='round'/%3E%3Cg fill='%237A4A72'%3E%3Ccircle cx='15' cy='24' r='2.8'/%3E%3Ccircle cx='35.5' cy='14.5' r='2.5'/%3E%3Ccircle cx='35.5' cy='24' r='2.5'/%3E%3Ccircle cx='35.5' cy='33.5' r='2.5'/%3E%3C/g%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="styles.css" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://ccagent.example/#org","name":"CC Agent","url":"https://ccagent.example/","logo":"https://ccagent.example/og.svg"},{"@type":"WebPage","@id":"https://ccagent.example/terms.html","url":"https://ccagent.example/terms.html","name":"Terms · CC Agent","isPartOf":{"@id":"https://ccagent.example/#site"},"description":"The basics of using CC Agent, plus our acceptable use policy. Use of the service, accounts and entities, acceptable use, channel availability, and disclaimers.","publisher":{"@id":"https://ccagent.example/#org"}}]}
+</script>
+</head>
+<body data-page="other">
+<a class="skip" href="#main">Skip to content</a>
+<header id="nav"></header>
+
+<main id="main">
+<section class="phero">
+  <div class="wrap">
+    <p class="eyebrow reveal">Legal</p>
+    <h1 class="reveal">Terms of <em>service.</em></h1>
+    <p class="psub reveal">The basics of using CC Agent, plus our acceptable use policy.</p>
+    <div class="pacts reveal">
+      <a class="btn btn-ghost" href="privacy.html">Read the privacy policy <i class="ph ph-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<section id="terms">
+  <div class="wrap">
+    <div class="prose reveal">
+      <p class="meta">Last updated June 2026</p>
+
+      <h2>Use of the service</h2>
+      <p>CC Agent is a governance gateway for enterprise AI. It routes, governs, and audits the calls your agents make through one API. These terms cover how you may use that service. By accessing CC Agent or its API, you agree to them on behalf of the entity you represent.</p>
+      <p>You are responsible for the agents, applications, and prompts you run through the gateway, and for the content they send and receive. You are also responsible for keeping your API keys and credentials secure, and for the activity that occurs under them.</p>
+
+      <h2>Accounts and entities</h2>
+      <p>Production access requires a KYC-cleared legal entity. Before a production key is issued, the entity is verified and screened against sanctions and entity lists, and that screening recurs on an ongoing basis. There are no anonymous production keys.</p>
+      <p>Access binds to the verified entity that holds the account. You may not share, transfer, or sublicense access to a party that has not been verified under these terms.</p>
+
+      <h2 id="aup">Acceptable use</h2>
+      <p>The following is our acceptable use policy. It applies to every account and every call routed through CC Agent. We may suspend or terminate access that breaches it.</p>
+      <p>You may not use CC Agent:</p>
+      <ul>
+        <li>To evade sanctions, export controls, or identity and KYC requirements, or to obscure the entity behind any traffic.</li>
+        <li>For anonymous resale, or to resell or sublicense access outside an authorized, verified channel.</li>
+        <li>In any way that violates the AWS or Anthropic terms, acceptable use policies, or per-model limits that apply to the upstream service.</li>
+        <li>For activity that is unlawful, or that infringes the rights of others, in the regions where your traffic runs.</li>
+      </ul>
+      <p>On our side of that policy, here is what CC Agent will not do. We do not hide the upstream model. We do not silently downgrade or reroute a call away from the model you requested. We do not alter token counts. The real vendor, model, region, and account are recorded on every usage event, and billing reconciles to the upstream invoice.</p>
+
+      <h2>Channel availability</h2>
+      <p>The live catalog runs on Amazon Bedrock with Anthropic Claude across the regions we publish, with Anthropic Direct as failover. Managed channel availability is subject to AWS and Anthropic official authorization and per-model limits. Models, regions, and capabilities may change as that authorization and those limits change, and some models listed as roadmap are not yet available.</p>
+
+      <h2>Disclaimers</h2>
+      <p>The service is provided as is and as available, without warranties of any kind, to the extent permitted by law. Any service level we describe is design intent, not a contractual commitment, until it is set out in a signed agreement with you.</p>
+      <p>Nothing on this site or in the service is investment or legal advice. You are responsible for confirming that your use of CC Agent fits your own regulatory and compliance obligations.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about these terms can go to <a href="mailto:yuesong.cai@outlook.com?subject=Terms%20question">yuesong.cai@outlook.com</a>. For acceptable use or abuse reports, write to the same address with "AUP" in the subject line.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap reveal">
+    <h2>Read the rest of the <em>fine print.</em></h2>
+    <p>The privacy policy covers what data we hold, where it runs, and how long we keep it.</p>
+    <div class="cta-actions">
+      <a class="btn btn-primary btn-lg" href="privacy.html">Privacy policy <i class="ph ph-arrow-right"></i></a>
+      <a class="btn btn-ghost btn-lg" href="trust.html">Trust &amp; compliance</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="site-footer"></div>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy · CC Agent</title>
+<meta name="description" content="How CC Agent handles data on this site and in the service: what we collect, how we use it, how service data is routed and retained, and how to request deletion." />
+<meta name="author" content="CC Agent" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#F1EEEF" />
+<link rel="canonical" href="https://ccagent.example/privacy.html" />
+<meta property="og:site_name" content="CC Agent" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Privacy · CC Agent" />
+<meta property="og:description" content="How CC Agent handles data on this site and in the service: what we collect, how we use it, how service data is routed and retained, and how to request deletion." />
+<meta property="og:url" content="https://ccagent.example/privacy.html" />
+<meta property="og:image" content="https://ccagent.example/og.svg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Privacy · CC Agent" />
+<meta name="twitter:description" content="How CC Agent handles data on this site and in the service: what we collect, how we use it, how service data is routed and retained, and how to request deletion." />
+<meta name="twitter:image" content="https://ccagent.example/og.svg" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='3.5' y='3.5' width='41' height='41' rx='13' fill='none' stroke='%237A4A72' stroke-width='2.6'/%3E%3Cpath d='M15 24H25M25 24C30 24 30 14.5 34.5 14.5M25 24H34.5M25 24C30 24 30 33.5 34.5 33.5' fill='none' stroke='%237A4A72' stroke-width='2.4' stroke-linecap='round'/%3E%3Cg fill='%237A4A72'%3E%3Ccircle cx='15' cy='24' r='2.8'/%3E%3Ccircle cx='35.5' cy='14.5' r='2.5'/%3E%3Ccircle cx='35.5' cy='24' r='2.5'/%3E%3Ccircle cx='35.5' cy='33.5' r='2.5'/%3E%3C/g%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="styles.css" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://ccagent.example/#org","name":"CC Agent","url":"https://ccagent.example/","logo":"https://ccagent.example/og.svg"},{"@type":"WebPage","@id":"https://ccagent.example/privacy.html","url":"https://ccagent.example/privacy.html","name":"Privacy · CC Agent","isPartOf":{"@id":"https://ccagent.example/#site"},"description":"How CC Agent handles data on this site and in the service: what we collect, how we use it, how service data is routed and retained, and how to request deletion.","publisher":{"@id":"https://ccagent.example/#org"}}]}
+</script>
+</head>
+<body data-page="other">
+<a class="skip" href="#main">Skip to content</a>
+<header id="nav"></header>
+
+<main id="main">
+<section class="phero">
+  <div class="wrap">
+    <p class="eyebrow reveal">Legal</p>
+    <h1 class="reveal">Privacy <em>policy.</em></h1>
+    <p class="psub reveal">How we handle data on this site and in the service.</p>
+    <div class="pacts reveal">
+      <a class="btn btn-ghost" href="terms.html">Read the terms</a>
+    </div>
+  </div>
+</section>
+
+<section id="policy">
+  <div class="wrap">
+    <div class="prose reveal">
+      <p class="meta">Last updated June 2026</p>
+
+      <p>This page explains, in plain terms, what data CC Agent handles and why. It covers two things: the small amount of data this marketing site collects, and the data that passes through the service when your agents route calls. This is a description of our practices, not legal advice.</p>
+
+      <h2>Information we collect</h2>
+      <p>On this site we keep collection minimal. We use basic, aggregate analytics to understand page traffic and improve the content. We do not build advertising profiles and we do not sell visitor data.</p>
+      <p>If you submit the demo request form, we collect what you enter: your name, work email, company, and your message. You choose what to put in those fields.</p>
+
+      <h2>How we use it</h2>
+      <p>We use the form details to respond to your demo request and to follow up about the service. We do not sell this information, and we do not share it except with the providers we rely on to operate the business, under agreement and only as needed to do the work.</p>
+
+      <h2>Service data</h2>
+      <p>When your agents call the service, prompts and responses are routed to the model provider you have configured. The live catalog runs on Amazon Bedrock across the regions you allow, with Anthropic Direct as failover. Traffic stays in those regions, with no silent cross-border hops.</p>
+      <p>We do not use your prompts or responses to train models. Content is processed to serve the request, to produce the usage and audit record, and to operate billing. Each call records the real upstream model, region, and account so the trail is reconcilable.</p>
+      <ul>
+        <li>Routed to the model provider you configure, in the regions you allow</li>
+        <li>Not used for model training</li>
+        <li>Retained per your configuration, with a tamper-evident audit record</li>
+      </ul>
+
+      <h2>Retention</h2>
+      <p>Service data is retained for the period set in your configuration. Audit and usage records are kept so charges can be reconciled and reviews can be supported, and they are removed on the schedule your settings and any contract define. Demo form submissions are kept only as long as needed to handle your inquiry and reasonable follow-up.</p>
+
+      <h2>Your choices</h2>
+      <p>You can ask us to access, correct, or delete the personal data we hold about you, including a demo submission. Email the address below and we will act on the request. Service data deletion follows your configured retention and the terms of your agreement.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about this policy, or a deletion request, can go to <a href="mailto:yuesong.cai@outlook.com?subject=Privacy%20request">yuesong.cai@outlook.com</a>. We read every message.</p>
+
+      <p>This policy describes current practice and may be updated as the service evolves. It is provided for transparency and is not legal advice.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="site-footer"></div>
+<script src="main.js"></script>
+</body>
+</html>

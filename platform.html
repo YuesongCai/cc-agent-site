@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Platform · CC Agent — one control plane for every model call</title>
+<meta name="description" content="One control plane between your agents and every model: multi-model routing with named modes, reconcilable cost, budgets, guardrails, and a stateless Go gateway on Amazon Bedrock." />
+<meta name="keywords" content="AI gateway platform, LLM control plane, multi-model routing, token metering, guardrails, Amazon Bedrock, Anthropic Claude, OpenAI compatible, failover" />
+<meta name="author" content="CC Agent" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#F1EEEF" />
+<link rel="canonical" href="https://ccagent.example/platform.html" />
+<meta property="og:site_name" content="CC Agent" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Platform · CC Agent" />
+<meta property="og:description" content="One control plane for every model call: multi-model routing, reconcilable cost, guardrails, on Amazon Bedrock." />
+<meta property="og:url" content="https://ccagent.example/platform.html" />
+<meta property="og:image" content="https://ccagent.example/og.svg" />
+<meta property="og:image:alt" content="CC Agent platform" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Platform · CC Agent" />
+<meta name="twitter:description" content="One control plane for every model call, on Amazon Bedrock." />
+<meta name="twitter:image" content="https://ccagent.example/og.svg" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='3.5' y='3.5' width='41' height='41' rx='13' fill='none' stroke='%237A4A72' stroke-width='2.6'/%3E%3Cpath d='M15 24H25M25 24C30 24 30 14.5 34.5 14.5M25 24H34.5M25 24C30 24 30 33.5 34.5 33.5' fill='none' stroke='%237A4A72' stroke-width='2.4' stroke-linecap='round'/%3E%3Cg fill='%237A4A72'%3E%3Ccircle cx='15' cy='24' r='2.8'/%3E%3Ccircle cx='35.5' cy='14.5' r='2.5'/%3E%3Ccircle cx='35.5' cy='24' r='2.5'/%3E%3Ccircle cx='35.5' cy='33.5' r='2.5'/%3E%3C/g%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="styles.css" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","@id":"https://ccagent.example/#org","name":"CC Agent","url":"https://ccagent.example/","logo":"https://ccagent.example/og.svg"},
+{"@type":"WebPage","@id":"https://ccagent.example/platform.html","url":"https://ccagent.example/platform.html","name":"Platform · CC Agent","isPartOf":{"@id":"https://ccagent.example/#site"},"about":"The AI governance gateway platform: multi-model routing, cost, guardrails, architecture","publisher":{"@id":"https://ccagent.example/#org"}}
+]}
+</script>
+</head>
+<body data-page="platform">
+<a class="skip" href="#main">Skip to content</a>
+<header id="nav"></header>
+
+<main id="main">
+<section class="phero">
+  <div class="wrap">
+    <p class="eyebrow reveal">The platform</p>
+    <h1 class="reveal">One control plane for<br>every model <em>call.</em></h1>
+    <p class="psub reveal">A governance layer between your agents and every model. Compliance and cost control live in the data path, not in a dashboard you check later.</p>
+    <div class="pacts reveal">
+      <button class="btn btn-primary js-demo" type="button">Book a demo <i class="ph ph-arrow-right"></i></button>
+      <a class="btn btn-ghost" href="docs.html">Read the docs</a>
+    </div>
+  </div>
+</section>
+
+<section id="capabilities">
+  <div class="wrap">
+    <div class="head reveal"><p class="eyebrow">Capabilities</p><h2 class="stitle">Everything around<br>the model.</h2><p class="ssub">Tap any card for the detail.</p></div>
+    <div class="bento">
+      <article class="cell c4 accent card-click reveal" data-eyebrow="Capability" data-title="Multi-model routing">
+        <i class="ph ph-graph ic"></i>
+        <h3>Multi-model routing</h3>
+        <p>Declarative policy across providers and regions, with named routing modes.</p>
+        <span class="more">Details <i class="ph ph-arrow-up-right"></i></span>
+        <div class="cardetail"><p>A declarative routing policy picks the upstream per request, with named modes: <span class="mono">Balanced</span>, <span class="mono">Pinned</span>, and <span class="mono">Failover-first</span>, across providers and regions.</p><p>Every call records <span class="mono">vendor / model / region / account</span>, visible in the console and exportable. No black boxes. See the catalog on <a href="models.html">Models</a>.</p></div>
+      </article>
+      <article class="cell card-click reveal" data-eyebrow="Capability" data-title="Reconcilable cost">
+        <i class="ph ph-receipt ic"></i><h3>Reconcilable cost</h3>
+        <p>Token counts from the upstream, never estimated.</p>
+        <span class="more">Details <i class="ph ph-arrow-up-right"></i></span>
+        <div class="cardetail"><p>Token counts come straight from the upstream response, recorded per <span class="mono">input / output / cache</span> in the data path.</p><p>The commercial terms, including no markup on bring-your-own-Bedrock, live on <a href="pricing.html">Pricing</a>.</p></div>
+      </article>
+      <article class="cell card-click reveal" data-eyebrow="Capability" data-title="Budgets &amp; limits">
+        <i class="ph ph-gauge ic"></i><h3>Budgets &amp; limits</h3>
+        <p>Caps per team, project, and key.</p>
+        <span class="more">Details <i class="ph ph-arrow-up-right"></i></span>
+        <div class="cardetail"><p>Team, project, and key budgets with RPM and TPM limits.</p><p>Dual monthly budget gates stop spend the moment a cap is breached.</p></div>
+      </article>
+      <article class="cell c4 card-click reveal" data-eyebrow="Capability" data-title="Reliability &amp; failover">
+        <i class="ph ph-stack ic"></i><h3>Reliability &amp; failover</h3>
+        <p>Multi-region Bedrock with automatic failover.</p>
+        <span class="more">Details <i class="ph ph-arrow-up-right"></i></span>
+        <div class="cardetail"><p>us-east-1, ap-northeast-1, and eu-central-1 on Bedrock, with Anthropic Direct for failover.</p><p>Built to carry a 99.9% monthly availability target. A contractual SLA is offered once it is provable in production.</p></div>
+      </article>
+      <article class="cell c3 card-click reveal" data-eyebrow="Capability" data-title="Guardrails">
+        <i class="ph ph-shield-check ic"></i><h3>Guardrails</h3>
+        <p>PII redaction and data classification in the data path.</p>
+        <span class="more">Details <i class="ph ph-arrow-up-right"></i></span>
+        <div class="cardetail"><p>PII guardrails and data classification run in the data plane, before a request ever leaves your boundary.</p><p>Sensitive data stays inside the regions your policy allows.</p></div>
+      </article>
+      <article class="cell c3 darkc card-click reveal" data-eyebrow="Capability" data-title="Drop-in">
+        <i class="ph ph-plugs-connected ic"></i><h3>Drop-in</h3>
+        <p>Anthropic and OpenAI-compatible APIs. Point base_url and go.</p>
+        <span class="more">Details <i class="ph ph-arrow-up-right"></i></span>
+        <div class="cardetail"><p>Compatible with the Anthropic <span class="mono">Messages</span> API today; an OpenAI <span class="mono">Chat Completions</span> translation layer is in progress.</p><p>Point <span class="mono">base_url</span> at CC Agent and your existing agents keep working. Full how-to in the <a href="docs.html">Docs</a>.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="audit">
+  <div class="wrap">
+    <div class="tband reveal">
+      <div>
+        <p class="eyebrow" style="margin-bottom:16px">Transparency</p>
+        <h3>Every call is recorded with the<br>real vendor, model, and region.</h3>
+        <div class="tk">
+          <span><i class="ph ph-seal-check"></i> Per-call record</span>
+          <span><i class="ph ph-file-magnifying-glass"></i> Exportable</span>
+          <span><i class="ph ph-lock-key"></i> Tamper-evident</span>
+        </div>
+      </div>
+      <a class="btn btn-primary" href="trust.html#record">See the audit record <i class="ph ph-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<section id="architecture" class="dark">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">Architecture</p>
+      <h2 class="stitle">A stateless gateway,<br>split clean.</h2>
+      <p class="ssub">A self-built Go data plane carries the agent traffic; a separate control plane runs policy, identity, and billing. Reconcilable cost is a ground rule.</p>
+    </div>
+    <div class="planes">
+      <div class="plane reveal"><div class="k">Data plane · Go</div><div class="t">auth · limits · guardrails · routing · streaming passthrough · metering · audit</div></div>
+      <div class="plane reveal"><div class="k">Control plane · NestJS</div><div class="t">tenant / project / key · routing policy · upstream vault · KYC · billing</div></div>
+      <div class="plane reveal"><div class="k">Storage</div><div class="t">PostgreSQL · ClickHouse · Redis · managed secrets vault</div></div>
+      <div class="plane reveal"><div class="k">Upstream</div><div class="t">Pluggable upstream adapters (open vendor schema). Bedrock multi-region + Anthropic Direct today.</div></div>
+    </div>
+    <ol class="life">
+      <li class="reveal"><div class="n">01</div><h3>Authenticate</h3><p>Virtual key stored as a hash only, bound to a vetted legal entity.</p></li>
+      <li class="reveal"><div class="n">02</div><h3>Limit &amp; budget</h3><p>Bucketed sliding window for rate, dual monthly budget gates.</p></li>
+      <li class="reveal"><div class="n">03</div><h3>Route &amp; stream</h3><p>Declarative routing to the chosen upstream, responses streamed through unmodified.</p></li>
+      <li class="reveal"><div class="n">04</div><h3>Meter &amp; audit</h3><p>Usage taken from the upstream response, written and tagged for reconciliation.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap reveal">
+    <h2>Put your agents on a<br>control plane you can <em>defend.</em></h2>
+    <p>See the platform against your stack. We will map an integration with you.</p>
+    <div class="cta-actions">
+      <button class="btn btn-primary btn-lg js-demo" type="button">Book a demo <i class="ph ph-arrow-right"></i></button>
+      <a class="btn btn-ghost btn-lg" href="models.html">See the models</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="site-footer"></div>
+<script src="main.js"></script>
+</body>
+</html>

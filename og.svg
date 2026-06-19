@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="Georgia, 'Times New Roman', serif">
+  <rect width="1200" height="630" fill="#F1EEEF"/>
+  <rect x="1" y="1" width="1198" height="628" fill="none" stroke="rgba(34,28,40,.12)"/>
+  <g transform="translate(80,76)">
+    <g transform="scale(1.05)" fill="none" stroke="#7A4A72">
+      <rect x="1.75" y="1.75" width="44.5" height="44.5" rx="14" stroke-width="2.6"/>
+      <path d="M15 24H25M25 24C30 24 30 14.5 34.5 14.5M25 24H34.5M25 24C30 24 30 33.5 34.5 33.5" stroke-width="2.4" stroke-linecap="round"/>
+      <g fill="#7A4A72" stroke="none"><circle cx="15" cy="24" r="2.8"/><circle cx="35.5" cy="14.5" r="2.5"/><circle cx="35.5" cy="24" r="2.5"/><circle cx="35.5" cy="33.5" r="2.5"/></g>
+    </g>
+    <text x="66" y="36" font-size="30" font-weight="500" fill="#221C28">CC Agent</text>
+  </g>
+  <text x="80" y="232" font-family="'Courier New', monospace" font-size="22" letter-spacing="4" fill="#7A4A72">AI GOVERNANCE GATEWAY · ON AMAZON BEDROCK</text>
+  <text x="76" y="340" font-size="84" fill="#221C28">Govern every call</text>
+  <text x="76" y="438" font-size="84" fill="#221C28">your agents <tspan font-style="italic" fill="#7A4A72">make.</tspan></text>
+  <text x="80" y="540" font-family="Arial, Helvetica, sans-serif" font-size="27" fill="#5A5060">Transparent routing, reconcilable cost, audit-ready by default.</text>
+</svg>

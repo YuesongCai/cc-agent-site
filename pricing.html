@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pricing · CC Agent — bring your own Bedrock, or managed</title>
+<meta name="description" content="Two ways to run CC Agent: bring your own Amazon Bedrock account, or run on our managed infrastructure. Transparent and reconcilable, with no token markup on BYOA." />
+<meta name="keywords" content="AI gateway pricing, Amazon Bedrock pricing, no token markup, managed AI gateway, BYOA, enterprise AI pricing" />
+<meta name="author" content="CC Agent" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#F1EEEF" />
+<link rel="canonical" href="https://ccagent.example/pricing.html" />
+<meta property="og:site_name" content="CC Agent" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Pricing · CC Agent" />
+<meta property="og:description" content="Two ways to run it: bring your own Bedrock, or managed. Transparent either way." />
+<meta property="og:url" content="https://ccagent.example/pricing.html" />
+<meta property="og:image" content="https://ccagent.example/og.svg" />
+<meta property="og:image:alt" content="CC Agent pricing" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Pricing · CC Agent" />
+<meta name="twitter:description" content="Bring your own Bedrock, or managed. Transparent either way." />
+<meta name="twitter:image" content="https://ccagent.example/og.svg" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='3.5' y='3.5' width='41' height='41' rx='13' fill='none' stroke='%237A4A72' stroke-width='2.6'/%3E%3Cpath d='M15 24H25M25 24C30 24 30 14.5 34.5 14.5M25 24H34.5M25 24C30 24 30 33.5 34.5 33.5' fill='none' stroke='%237A4A72' stroke-width='2.4' stroke-linecap='round'/%3E%3Cg fill='%237A4A72'%3E%3Ccircle cx='15' cy='24' r='2.8'/%3E%3Ccircle cx='35.5' cy='14.5' r='2.5'/%3E%3Ccircle cx='35.5' cy='24' r='2.5'/%3E%3Ccircle cx='35.5' cy='33.5' r='2.5'/%3E%3C/g%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="styles.css" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","@id":"https://ccagent.example/#org","name":"CC Agent","url":"https://ccagent.example/","logo":"https://ccagent.example/og.svg"},
+{"@type":"WebPage","@id":"https://ccagent.example/pricing.html","url":"https://ccagent.example/pricing.html","name":"Pricing · CC Agent","isPartOf":{"@id":"https://ccagent.example/#site"},"publisher":{"@id":"https://ccagent.example/#org"}},
+{"@type":"FAQPage","@id":"https://ccagent.example/pricing.html#faq","mainEntity":[
+{"@type":"Question","name":"Do you mark up tokens?","acceptedAnswer":{"@type":"Answer","text":"On bring-your-own-Bedrock, no. You pay AWS directly and we charge for the platform by seat and usage. On the managed path, pricing is transparent and reconcilable, and channel availability is subject to AWS and Anthropic official authorization and per-model limits."}},
+{"@type":"Question","name":"Where does my data go?","acceptedAnswer":{"@type":"Answer","text":"To the regions your policy allows. Routing is in-region by default with no silent cross-border hops, and upstream credentials live in a managed secrets vault. PII guardrails run in the data path."}},
+{"@type":"Question","name":"Which models can I use?","acceptedAnswer":{"@type":"Answer","text":"Anthropic Claude on Amazon Bedrock today, across multiple regions, with Anthropic Direct failover. CC Agent is model-agnostic by design, so more providers come online as authorized. You set a model allowlist per project."}},
+{"@type":"Question","name":"Do I need an overseas legal entity?","acceptedAnswer":{"@type":"Answer","text":"For the managed path, yes, with KYC. Bring-your-own-Bedrock runs entirely in your own AWS account, so you contract with AWS directly for the models."}},
+{"@type":"Question","name":"How long does integration take?","acceptedAnswer":{"@type":"Answer","text":"Point your base_url at CC Agent. Existing agents and SDKs that speak the Anthropic Messages or OpenAI-compatible API keep working, so most teams are live the same day."}}
+]}
+]}
+</script>
+</head>
+<body data-page="pricing">
+<a class="skip" href="#main">Skip to content</a>
+<header id="nav"></header>
+
+<main id="main">
+<section class="phero">
+  <div class="wrap">
+    <p class="eyebrow reveal">Pricing</p>
+    <h1 class="reveal">Two ways to run it.<br>Transparent <em>either way.</em></h1>
+    <p class="psub reveal">Start on your own Amazon Bedrock account, or let us run it. Same governance and audit trail on both.</p>
+    <div class="pacts reveal">
+      <button class="btn btn-primary js-demo" type="button">Book a demo <i class="ph ph-arrow-right"></i></button>
+      <a class="btn btn-ghost" href="platform.html">See the platform</a>
+    </div>
+  </div>
+</section>
+
+<section id="ways">
+  <div class="wrap">
+    <div class="tracks">
+      <article class="track reveal">
+        <div class="track-tag">Bring your own Bedrock</div>
+        <h3>Your account</h3>
+        <p class="d">You keep your own AWS and Bedrock account. We provide the control plane on top.</p>
+        <ul>
+          <li><i class="ph ph-check"></i>Seat and usage based. <strong>No markup on tokens</strong></li>
+          <li><i class="ph ph-check"></i>Your data and spend stay in your account</li>
+          <li><i class="ph ph-check"></i>Reconciled line by line against your AWS invoice</li>
+          <li><i class="ph ph-check"></i>Best for teams already on AWS</li>
+        </ul>
+      </article>
+      <article class="track feature reveal">
+        <div class="track-tag">Managed</div>
+        <h3>We run it</h3>
+        <p class="d">Compliant Bedrock access through official AWS channels. One vendor, one invoice.</p>
+        <ul>
+          <li><i class="ph ph-check"></i>Transparent, reconcilable pricing</li>
+          <li><i class="ph ph-check"></i>Overseas signing entity and KYC required</li>
+          <li><i class="ph ph-check"></i>Subject to AWS and Anthropic authorization and per-model limits</li>
+        </ul>
+      </article>
+    </div>
+    <p class="adopt-note reveal">Pricing is tailored to scenario and volume. <a href="mailto:yuesong.cai@outlook.com?subject=CC%20Agent%20pricing">Talk to us for a plan.</a></p>
+  </div>
+</section>
+
+<section id="start" class="dark">
+  <div class="wrap">
+    <div class="head reveal"><p class="eyebrow">Getting started</p><h2 class="stitle">From first call<br>to production.</h2></div>
+    <ol class="steps">
+      <li class="step reveal"><div class="n">01</div><h3>Talk</h3><p>We map your stack, regions, and regulatory context, and pick the path that fits.</p></li>
+      <li class="step reveal"><div class="n">02</div><h3>Connect</h3><p>Point <span style="font-family:var(--mono);font-size:13px">base_url</span> at CC Agent. Keys and policy are set in the console.</p></li>
+      <li class="step reveal"><div class="n">03</div><h3>Go</h3><p>Traffic routes through the control plane. Usage and audit show up from the first call.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="head reveal" style="margin-left:auto;margin-right:auto;text-align:center"><p class="eyebrow">FAQ</p><h2 class="stitle">Questions buyers ask.</h2></div>
+    <div class="faq reveal">
+      <div class="faq-item"><button class="faq-q" aria-expanded="false" type="button">Do you mark up tokens? <i class="ph ph-plus"></i></button><div class="faq-a"><div class="faq-a-in"><p>On bring-your-own-Bedrock, no. You pay AWS directly and we charge for the platform by seat and usage. On the managed path, pricing is transparent and reconcilable, and channel availability is subject to AWS and Anthropic authorization and per-model limits.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false" type="button">Where does my data go? <i class="ph ph-plus"></i></button><div class="faq-a"><div class="faq-a-in"><p>To the regions your policy allows. Routing is in-region by default with no silent cross-border hops, and upstream credentials live in a managed secrets vault. PII guardrails run in the data path. See <a href="trust.html">Trust</a>.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false" type="button">Which models can I use? <i class="ph ph-plus"></i></button><div class="faq-a"><div class="faq-a-in"><p>Anthropic Claude on Amazon Bedrock today, across multiple regions, with Anthropic Direct failover. CC Agent is model-agnostic by design, so more providers come online as authorized. You set a model allowlist per project. See <a href="models.html">Models</a>.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false" type="button">Do I need an overseas legal entity? <i class="ph ph-plus"></i></button><div class="faq-a"><div class="faq-a-in"><p>For the managed path, yes, with KYC. Bring-your-own-Bedrock runs entirely in your own AWS account, so you contract with AWS directly for the models.</p></div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false" type="button">How long does integration take? <i class="ph ph-plus"></i></button><div class="faq-a"><div class="faq-a-in"><p>Point your <span class="mono">base_url</span> at CC Agent. Existing agents and SDKs that speak the Anthropic <span class="mono">Messages</span> or OpenAI-compatible API keep working, so most teams are live the same day. See <a href="docs.html">Docs</a>.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap reveal">
+    <h2>Pick a path, and<br>we will <em>map it.</em></h2>
+    <p>Tell us your scenario and volume. We will come back with a plan.</p>
+    <div class="cta-actions">
+      <button class="btn btn-primary btn-lg js-demo" type="button">Book a demo <i class="ph ph-arrow-right"></i></button>
+      <a class="btn btn-ghost btn-lg" href="models.html">See the models</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="site-footer"></div>
+<script src="main.js"></script>
+</body>
+</html>

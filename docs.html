@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Docs · CC Agent — start in minutes</title>
+<meta name="description" content="Point your base_url at CC Agent and existing agents keep working. Quickstart, Anthropic Messages and OpenAI-compatible API, routing modes, and supported models and regions." />
+<meta name="author" content="CC Agent" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#F1EEEF" />
+<link rel="canonical" href="https://ccagent.example/docs.html" />
+<meta property="og:site_name" content="CC Agent" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Docs · CC Agent — start in minutes" />
+<meta property="og:description" content="Point your base_url at CC Agent and existing agents keep working. Quickstart, Anthropic Messages and OpenAI-compatible API, routing modes, and supported models and regions." />
+<meta property="og:url" content="https://ccagent.example/docs.html" />
+<meta property="og:image" content="https://ccagent.example/og.svg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Docs · CC Agent — start in minutes" />
+<meta name="twitter:description" content="Point your base_url at CC Agent and existing agents keep working. Quickstart, Anthropic Messages and OpenAI-compatible API, routing modes, and supported models and regions." />
+<meta name="twitter:image" content="https://ccagent.example/og.svg" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='3.5' y='3.5' width='41' height='41' rx='13' fill='none' stroke='%237A4A72' stroke-width='2.6'/%3E%3Cpath d='M15 24H25M25 24C30 24 30 14.5 34.5 14.5M25 24H34.5M25 24C30 24 30 33.5 34.5 33.5' fill='none' stroke='%237A4A72' stroke-width='2.4' stroke-linecap='round'/%3E%3Cg fill='%237A4A72'%3E%3Ccircle cx='15' cy='24' r='2.8'/%3E%3Ccircle cx='35.5' cy='14.5' r='2.5'/%3E%3Ccircle cx='35.5' cy='24' r='2.5'/%3E%3Ccircle cx='35.5' cy='33.5' r='2.5'/%3E%3C/g%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="styles.css" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://ccagent.example/#org","name":"CC Agent","url":"https://ccagent.example/","logo":"https://ccagent.example/og.svg"},{"@type":"WebPage","@id":"https://ccagent.example/docs.html","url":"https://ccagent.example/docs.html","name":"Docs · CC Agent","isPartOf":{"@id":"https://ccagent.example/#site"},"description":"Point your base_url at CC Agent and existing agents keep working. Quickstart, Anthropic Messages and OpenAI-compatible API, routing modes, and supported models and regions.","publisher":{"@id":"https://ccagent.example/#org"}}]}
+</script>
+</head>
+<body data-page="other">
+<a class="skip" href="#main">Skip to content</a>
+<header id="nav"></header>
+
+<main id="main">
+<section class="phero">
+  <div class="wrap">
+    <p class="eyebrow reveal">Docs</p>
+    <h1 class="reveal">Start in <em>minutes.</em></h1>
+    <p class="psub reveal">Point your base_url at CC Agent. Existing agents and SDKs that speak the Anthropic Messages or OpenAI-compatible API keep working.</p>
+    <div class="pacts reveal">
+      <button class="btn btn-primary js-demo" type="button">Book a demo <i class="ph ph-arrow-right"></i></button>
+      <a class="btn btn-ghost" href="models.html">Browse models</a>
+    </div>
+  </div>
+</section>
+
+<section id="reference">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">Reference</p>
+      <h2 class="stitle">One base URL,<br>and you are in.</h2>
+      <p class="ssub">Swap the endpoint, keep your code. Routing, governance, and audit happen on our side.</p>
+    </div>
+    <div class="docs">
+      <div class="doc-block reveal">
+        <h3>Quickstart</h3>
+        <p>Set the base URL to CC Agent and call it with your virtual key. Anthropic SDKs and any client that reads ANTHROPIC_BASE_URL pick it up with no other change.</p>
+        <div class="codeblock">
+<pre>export ANTHROPIC_BASE_URL=<span class="k">https://api.ccagent.example</span>
+
+curl <span class="k">"$ANTHROPIC_BASE_URL/v1/messages"</span> \
+  -H <span class="k">"Authorization: Bearer cca_live_..."</span> \
+  -H <span class="k">"content-type: application/json"</span> \
+  -d <span class="k">'{
+    "model": "claude-sonnet",
+    "max_tokens": 1024,
+    "messages": [
+      { "role": "user", "content": "Hello from CC Agent" }
+    ]
+  }'</span></pre>
+        </div>
+      </div>
+      <div class="doc-block reveal">
+        <h3>API compatibility</h3>
+        <p>Two surfaces, one gateway. The Anthropic Messages API is live today. The OpenAI surface is served by a translation layer that is still in progress, so test it before you cut over.</p>
+        <ul>
+          <li><i class="ph ph-check"></i>Anthropic Messages, POST /v1/messages (available)</li>
+          <li><i class="ph ph-check"></i>OpenAI Chat Completions, POST /v1/chat/completions (translation layer, in progress)</li>
+        </ul>
+      </div>
+      <div class="doc-block reveal">
+        <h3>Routing modes</h3>
+        <p>A declarative policy decides the upstream per request. Pick the mode per project and the gateway handles failover for you.</p>
+        <ul>
+          <li><i class="ph ph-check"></i>Balanced, spread traffic across healthy regions for throughput</li>
+          <li><i class="ph ph-check"></i>Pinned, lock a project to one region for residency</li>
+          <li><i class="ph ph-check"></i>Failover-first, prefer a primary and fall back automatically</li>
+        </ul>
+      </div>
+      <div class="doc-block reveal">
+        <h3>Models and regions</h3>
+        <p>The live catalog is Anthropic Claude on Amazon Bedrock, with Anthropic Direct for failover. Scope each project to the models it is allowed to call.</p>
+        <ul>
+          <li><i class="ph ph-check"></i>Claude Opus, Sonnet, and Haiku on Amazon Bedrock</li>
+          <li><i class="ph ph-check"></i>Regions: us-east-1, ap-northeast-1, eu-central-1</li>
+          <li><i class="ph ph-check"></i>Set a model allowlist per project, for example claude-*</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap reveal">
+    <h2>Want a guided <em>integration?</em></h2>
+    <p>We will map the swap against your stack, regions, and policy, then connect it with you.</p>
+    <div class="cta-actions">
+      <button class="btn btn-primary btn-lg js-demo" type="button">Book a demo <i class="ph ph-arrow-right"></i></button>
+      <a class="btn btn-ghost btn-lg" href="platform.html">See the platform</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="site-footer"></div>
+<script src="main.js"></script>
+</body>
+</html>

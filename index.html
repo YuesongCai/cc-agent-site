@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CC Agent · One API for every model — route, govern, audit</title>
+<meta name="description" content="The governance gateway for enterprise AI: one API to route, govern, and audit every call your agents make. Claude on Amazon Bedrock today, model-agnostic by design." />
+<meta name="keywords" content="AI gateway, LLM gateway, multi-model, model routing, AI governance, audit, Amazon Bedrock, Anthropic Claude, OpenAI compatible, enterprise AI" />
+<meta name="author" content="CC Agent" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#F1EEEF" />
+<link rel="canonical" href="https://ccagent.example/" />
+<meta property="og:site_name" content="CC Agent" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="CC Agent · One API for every model" />
+<meta property="og:description" content="Route, govern, and audit every call your AI agents make. Claude on Amazon Bedrock today, model-agnostic by design." />
+<meta property="og:url" content="https://ccagent.example/" />
+<meta property="og:image" content="https://ccagent.example/og.svg" />
+<meta property="og:image:alt" content="CC Agent — the governance gateway for enterprise AI" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="CC Agent · One API for every model" />
+<meta name="twitter:description" content="Route, govern, and audit every call your AI agents make." />
+<meta name="twitter:image" content="https://ccagent.example/og.svg" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='3.5' y='3.5' width='41' height='41' rx='13' fill='none' stroke='%237A4A72' stroke-width='2.6'/%3E%3Cpath d='M15 24H25M25 24C30 24 30 14.5 34.5 14.5M25 24H34.5M25 24C30 24 30 33.5 34.5 33.5' fill='none' stroke='%237A4A72' stroke-width='2.4' stroke-linecap='round'/%3E%3Cg fill='%237A4A72'%3E%3Ccircle cx='15' cy='24' r='2.8'/%3E%3Ccircle cx='35.5' cy='14.5' r='2.5'/%3E%3Ccircle cx='35.5' cy='24' r='2.5'/%3E%3Ccircle cx='35.5' cy='33.5' r='2.5'/%3E%3C/g%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="styles.css" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"Organization","@id":"https://ccagent.example/#org","name":"CC Agent","url":"https://ccagent.example/","logo":"https://ccagent.example/og.svg","description":"The governance gateway for enterprise AI: route, govern, and audit every call your agents make."},
+{"@type":"WebSite","@id":"https://ccagent.example/#site","url":"https://ccagent.example/","name":"CC Agent","publisher":{"@id":"https://ccagent.example/#org"}}
+]}
+</script>
+</head>
+<body data-page="home">
+<a class="skip" href="#main">Skip to content</a>
+<header id="nav"></header>
+
+<main id="main">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow reveal">One API for every model</p>
+      <h1 class="reveal">Govern every model<br>your agents <em>call.</em></h1>
+      <p class="hero-sub reveal">One API in front of every model: route, govern, and audit every call. Claude on Amazon Bedrock today, model-agnostic by design.</p>
+      <div class="hero-actions reveal">
+        <button class="btn btn-primary js-demo" type="button">Book a demo <i class="ph ph-arrow-right"></i></button>
+        <a class="btn btn-ghost" href="models.html">See the models</a>
+      </div>
+      <dl class="hero-stats reveal">
+        <div><dt>One endpoint</dt><dd>point base_url and go</dd></div>
+        <div><dt>Every call</dt><dd>logged, costed, auditable</dd></div>
+        <div><dt>Two paths</dt><dd>your Bedrock, or managed</dd></div>
+      </dl>
+    </div>
+    <div class="diagram reveal" aria-label="One gateway routing to many models">
+      <div class="dg-row">
+        <div class="dg-node"><div class="t"><i class="ph ph-robot" style="color:var(--plum)"></i> Your agents</div><div class="m">apps · SDKs · Cursor</div></div>
+        <div class="dg-node dg-gw"><div class="t"><i class="ph ph-shield-check"></i> CC Agent</div><ul><li>auth</li><li>route</li><li>guard</li><li>meter</li></ul></div>
+        <div class="dg-ups">
+          <div class="dg-up"><span>Claude · Bedrock <span class="m">us-east-1</span></span><i class="ph ph-check-circle ck"></i></div>
+          <div class="dg-up"><span>Claude · Bedrock <span class="m">ap-northeast-1</span></span><i class="ph ph-check-circle ck"></i></div>
+          <div class="dg-up"><span>Anthropic <span class="m">Direct failover</span></span><i class="ph ph-check-circle ck"></i></div>
+          <div class="dg-up"><span style="color:var(--ink-faint)">GPT · Gemini · more</span><span class="avail soon">soon</span></div>
+        </div>
+      </div>
+      <div class="dg-wires"><svg viewBox="0 0 100 78" preserveAspectRatio="none"><path class="wire" d="M2,39 H40"/><path class="wire" d="M40,39 C70,39 70,9 98,9"/><path class="wire" d="M40,39 C70,39 70,30 98,30"/><path class="wire" d="M40,39 C70,39 70,52 98,52"/><path class="wire" d="M40,39 C70,39 70,72 98,72"/></svg></div>
+      <div class="dg-audit"><i class="ph ph-seal-check"></i> Every call recorded: vendor / model / region</div>
+    </div>
+  </div>
+</section>
+
+<section class="strip" aria-label="Built on">
+  <div class="wrap strip-in reveal">
+    <span class="strip-label">Built on</span>
+    <div class="strip-logos">
+      <img src="https://cdn.simpleicons.org/amazonwebservices/5A5060" alt="Amazon Web Services" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'strip-word',textContent:'AWS'}))" />
+      <span class="strip-dot"></span><span class="strip-word">Amazon&nbsp;Bedrock</span>
+      <span class="strip-dot"></span>
+      <img src="https://cdn.simpleicons.org/anthropic/5A5060" alt="Anthropic" style="height:18px" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'strip-word',textContent:'Anthropic'}))" />
+      <span class="strip-dot"></span><span class="strip-word">Claude</span>
+      <span class="strip-dot"></span><span class="strip-word" style="font-size:15px;font-family:var(--mono)">OpenAI-compatible API</span>
+    </div>
+  </div>
+</section>
+
+<section id="product">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">The product</p>
+      <h2 class="stitle">See what your team gets.</h2>
+      <p class="ssub">Four views of one control plane.</p>
+    </div>
+    <div class="preview reveal">
+      <div class="ptabs" role="tablist">
+        <div class="ptabs-btns">
+          <button data-tab="routing" data-desc="Which model served each call, where, and whether it succeeded." class="on" role="tab" aria-selected="true">Routing</button>
+          <button data-tab="cost" data-desc="Spend by project this month, so finance sees it before the invoice." role="tab" aria-selected="false">Cost</button>
+          <button data-tab="audit" data-desc="A glimpse of the per-call record. The full audit artifact lives on Trust." role="tab" aria-selected="false">Audit</button>
+          <button data-tab="guard" data-desc="The policy enforced in the data path on every call." role="tab" aria-selected="false">Guardrails</button>
+        </div>
+        <p class="ptabs-desc" id="ptabsDesc">Which model served each call, where, and whether it succeeded.</p>
+      </div>
+      <div class="ppanel on" data-panel="routing" role="tabpanel">
+        <p class="plabel">Routing · recent calls</p>
+        <div class="rowt h"><span>Model</span><span>Upstream</span><span>Status</span><span class="tok">Tokens</span></div>
+        <div class="rowt"><span class="mname">claude-opus</span><span class="meta">bedrock · us-east-1</span><span class="ok"><i class="ph ph-check-circle"></i> ok</span><span class="tok">3,420</span></div>
+        <div class="rowt"><span class="mname">claude-sonnet</span><span class="meta">bedrock · ap-northeast-1</span><span class="ok"><i class="ph ph-check-circle"></i> ok</span><span class="tok">1,240</span></div>
+        <div class="rowt"><span class="mname">claude-haiku</span><span class="meta">anthropic · failover</span><span class="ok"><i class="ph ph-check-circle"></i> ok</span><span class="tok">860</span></div>
+        <p class="pcap">Illustrative.</p>
+      </div>
+      <div class="ppanel" data-panel="cost" role="tabpanel">
+        <p class="plabel">Cost · this month, by project</p>
+        <div class="bar"><span class="nm">research-agents</span><div class="track"><div class="fill" style="width:42%"></div></div><span class="pct">42%</span></div>
+        <div class="bar"><span class="nm">code-review</span><div class="track"><div class="fill" style="width:29%"></div></div><span class="pct">29%</span></div>
+        <div class="bar"><span class="nm">support-bot</span><div class="track"><div class="fill" style="width:20%"></div></div><span class="pct">20%</span></div>
+        <div class="bar"><span class="nm">internal-tools</span><div class="track"><div class="fill" style="width:9%"></div></div><span class="pct">9%</span></div>
+        <p class="pcap">Illustrative shares.</p>
+      </div>
+      <div class="ppanel" data-panel="audit" role="tabpanel">
+        <p class="plabel">Audit · usage record (glimpse)</p>
+        <div class="record">
+          <div class="rb"><span class="dot"></span> usage_event · illustrative</div>
+<pre>{
+  "model":  "claude-sonnet",
+  "vendor": <span class="k">"bedrock"</span>,
+  "region": <span class="k">"ap-northeast-1"</span>,
+  "tokens": { "in": 1840, "out": 612, "cache_read": 980 },
+  "audited": <span class="k">true</span>
+}</pre>
+        </div>
+        <div class="export"><a class="btn btn-ghost btn-sm" href="trust.html#record">See the full record <i class="ph ph-arrow-right"></i></a></div>
+      </div>
+      <div class="ppanel" data-panel="guard" role="tabpanel">
+        <p class="plabel">Guardrails · active policy</p>
+        <div class="pol"><span>PII redaction</span><span class="on-pill">on</span></div>
+        <div class="pol"><span>Allowed regions</span><span class="v">us-east-1, ap-northeast-1</span></div>
+        <div class="pol"><span>Monthly budget</span><span class="on-pill">enforced</span></div>
+        <div class="pol"><span>Model allowlist</span><span class="v">claude-*</span></div>
+        <p class="pcap">Illustrative.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="committee">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">Who signs off</p>
+      <h2 class="stitle">Built for the whole<br>buying committee.</h2>
+      <p class="ssub">One platform, three answers.</p>
+    </div>
+    <div class="pillars">
+      <a class="pillar reveal" href="pricing.html">
+        <i class="ph ph-chart-line-up ic"></i>
+        <h3>Finance</h3>
+        <p>Control the spend. Cost by team and project, budgets that stop overruns, no token markup on your own Bedrock.</p>
+        <span class="go">See pricing <i class="ph ph-arrow-right"></i></span>
+      </a>
+      <a class="pillar reveal" href="trust.html">
+        <i class="ph ph-shield-check ic"></i>
+        <h3>Risk &amp; compliance</h3>
+        <p>Pass the audit. Every call logged with the real model, region, and account, exportable for review.</p>
+        <span class="go">See trust <i class="ph ph-arrow-right"></i></span>
+      </a>
+      <a class="pillar reveal" href="platform.html">
+        <i class="ph ph-code ic"></i>
+        <h3>Engineering</h3>
+        <p>Ship in a day. Point one endpoint at us; existing agents keep working, with governance underneath.</p>
+        <span class="go">See the platform <i class="ph ph-arrow-right"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="trust">
+  <div class="wrap">
+    <div class="tband reveal">
+      <div>
+        <p class="eyebrow" style="margin-bottom:16px">Trust</p>
+        <h3>Compliance is the product,<br>not the pitch.</h3>
+        <div class="tk">
+          <span><i class="ph ph-globe-hemisphere-east"></i> Data residency</span>
+          <span><i class="ph ph-identification-card"></i> KYC &amp; screening</span>
+          <span><i class="ph ph-file-magnifying-glass"></i> Immutable audit</span>
+        </div>
+      </div>
+      <a class="btn btn-primary" href="trust.html">See trust &amp; compliance <i class="ph ph-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<section class="cta dark">
+  <div class="wrap reveal">
+    <h2>One API. Every model.<br>Every call <em>governed.</em></h2>
+    <p>Tell us your stack and your regulatory context. We will come back with an integration and a plan.</p>
+    <div class="cta-actions">
+      <button class="btn btn-primary btn-lg js-demo" type="button">Book a demo <i class="ph ph-arrow-right"></i></button>
+      <a class="btn btn-ghost btn-lg" href="models.html">See the models</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="site-footer"></div>
+<script src="main.js"></script>
+</body>
+</html>

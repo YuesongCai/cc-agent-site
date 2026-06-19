@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Security · CC Agent — secure by construction</title>
+<meta name="description" content="How CC Agent handles credentials, data, and audit: managed secrets vault with KMS, in-region routing, append-only tamper-evident audit, KYC-cleared access, and a compliance posture designed to support SOC 2 and GDPR-aligned practices." />
+<meta name="author" content="CC Agent" />
+<meta name="robots" content="index, follow" />
+<meta name="theme-color" content="#F1EEEF" />
+<link rel="canonical" href="https://ccagent.example/security.html" />
+<meta property="og:site_name" content="CC Agent" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Security · CC Agent — secure by construction" />
+<meta property="og:description" content="How CC Agent handles credentials, data, and audit: managed secrets vault with KMS, in-region routing, append-only tamper-evident audit, KYC-cleared access, and a compliance posture designed to support SOC 2 and GDPR-aligned practices." />
+<meta property="og:url" content="https://ccagent.example/security.html" />
+<meta property="og:image" content="https://ccagent.example/og.svg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Security · CC Agent — secure by construction" />
+<meta name="twitter:description" content="How CC Agent handles credentials, data, and audit: managed secrets vault with KMS, in-region routing, append-only tamper-evident audit, KYC-cleared access, and a compliance posture designed to support SOC 2 and GDPR-aligned practices." />
+<meta name="twitter:image" content="https://ccagent.example/og.svg" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Crect x='3.5' y='3.5' width='41' height='41' rx='13' fill='none' stroke='%237A4A72' stroke-width='2.6'/%3E%3Cpath d='M15 24H25M25 24C30 24 30 14.5 34.5 14.5M25 24H34.5M25 24C30 24 30 33.5 34.5 33.5' fill='none' stroke='%237A4A72' stroke-width='2.4' stroke-linecap='round'/%3E%3Cg fill='%237A4A72'%3E%3Ccircle cx='15' cy='24' r='2.8'/%3E%3Ccircle cx='35.5' cy='14.5' r='2.5'/%3E%3Ccircle cx='35.5' cy='24' r='2.5'/%3E%3Ccircle cx='35.5' cy='33.5' r='2.5'/%3E%3C/g%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="styles.css" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://ccagent.example/#org","name":"CC Agent","url":"https://ccagent.example/","logo":"https://ccagent.example/og.svg"},{"@type":"WebPage","@id":"https://ccagent.example/security.html","url":"https://ccagent.example/security.html","name":"Security · CC Agent","isPartOf":{"@id":"https://ccagent.example/#site"},"description":"How CC Agent handles credentials, data, and audit: managed secrets vault with KMS, in-region routing, append-only tamper-evident audit, KYC-cleared access, and a compliance posture designed to support SOC 2 and GDPR-aligned practices.","publisher":{"@id":"https://ccagent.example/#org"}}]}
+</script>
+</head>
+<body data-page="other">
+<a class="skip" href="#main">Skip to content</a>
+<header id="nav"></header>
+
+<main id="main">
+<section class="phero">
+  <div class="wrap">
+    <p class="eyebrow reveal">Security</p>
+    <h1 class="reveal">Secure by <em>construction.</em></h1>
+    <p class="psub reveal">Credentials, data, and audit are handled so your security team can sign off.</p>
+    <div class="pacts reveal">
+      <button class="btn btn-primary js-demo" type="button">Book a demo <i class="ph ph-arrow-right"></i></button>
+      <a class="btn btn-ghost" href="trust.html">Trust center</a>
+    </div>
+  </div>
+</section>
+
+<section id="security-detail">
+  <div class="wrap">
+    <div class="prose reveal">
+      <p class="meta">Last updated June 2026</p>
+
+      <h2>Credentials</h2>
+      <p>Upstream credentials live only in a managed secrets vault, encrypted with KMS. They are never committed to the repo or written into environment files. Keys are referenced at runtime, not copied, and every access is scoped to the service that needs it and written to an access log. A credential never sits in plaintext where it can leak.</p>
+
+      <h2>Data handling</h2>
+      <p>In-region routing keeps traffic inside the regions your policy allows, with no silent cross-border hops on any call. PII guardrails and data classification run in the data path, not as an afterthought, so sensitive content is caught before it leaves your boundary. Prompts and responses are not used to train models.</p>
+      <ul>
+        <li>In-region routing, no silent cross-border hops</li>
+        <li>PII guardrails and data classification in the data path</li>
+        <li>Prompts are not used for training</li>
+      </ul>
+
+      <h2>Audit</h2>
+      <p>Every call produces an append-only, tamper-evident record. Each entry carries the real upstream vendor, model, region, and account for that call, so reviewers see what actually happened rather than a summary. The full log is exportable for review and procurement.</p>
+      <ul>
+        <li>Append-only, tamper-evident records</li>
+        <li>Per-call vendor, model, region, and account</li>
+        <li>Exportable for audit and procurement</li>
+      </ul>
+
+      <h2>Access &amp; identity</h2>
+      <p>Production keys bind to a KYC-cleared legal entity. There are no anonymous production keys. Entities are screened on a recurring basis against sanctions and entity lists, so access reflects current standing rather than a one-time check at signup. The console supports SSO and role-based access control, so people see only what their role allows.</p>
+      <ul>
+        <li>Keys bound to a KYC-cleared legal entity</li>
+        <li>Recurring sanctions and entity-list screening</li>
+        <li>SSO and RBAC for the console</li>
+      </ul>
+
+      <h2>Compliance posture</h2>
+      <p>The platform is designed to support SOC 2 and GDPR-aligned practices. To be clear and honest about where we stand: these certifications are being pursued, not yet held. We will not claim a badge we do not have. If your review needs a specific control mapped, bring it and we will show how it lines up.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap reveal">
+    <h2>Send us your security <em>questionnaire.</em></h2>
+    <p>Bring your review framework. We will answer it line by line and show how the controls map.</p>
+    <div class="cta-actions">
+      <button class="btn btn-primary btn-lg js-demo" type="button">Book a demo <i class="ph ph-arrow-right"></i></button>
+      <a class="btn btn-ghost btn-lg" href="trust.html">Trust center</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<div id="site-footer"></div>
+<script src="main.js"></script>
+</body>
+</html>
