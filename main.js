@@ -291,7 +291,7 @@
       }
       detail.classList.add('swap');
       detail.innerHTML = '<div class="ad-head"><span class="plogo lg"><img src="' + p.logo + '" alt=""></span>' +
-        '<div><h3>' + p.name + '</h3><span class="avail ' + (live ? 'live' : 'soon') + '">' + (live ? 'available' : 'added as authorized') + '</span></div></div>' +
+        '<div class="ad-title"><h3>' + p.name + '</h3><span class="avail ' + (live ? 'live' : 'soon') + '">' + (live ? 'available' : 'added as authorized') + '</span></div></div>' +
         '<p class="ad-blurb">' + p.blurb + '</p><div class="atlas-specs">' + specs + '</div>' + tail;
       requestAnimationFrame(function () { detail.classList.remove('swap'); });
     }
