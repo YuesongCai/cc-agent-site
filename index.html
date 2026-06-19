@@ -59,14 +59,14 @@
     <div class="diagram reveal" aria-label="One gateway routing to many models">
       <div class="dg-row">
         <div class="dg-node"><div class="t"><i class="ph ph-robot" style="color:var(--plum)"></i> Your agents</div><div class="m">apps · SDKs · Cursor</div></div>
-        <div class="dg-node dg-gw"><div class="t"><i class="ph ph-shield-check"></i> CC Agent</div><ul><li>auth</li><li>route</li><li>guard</li><li>meter</li></ul></div>
+        <div class="dg-node dg-gw"><div class="t"><i class="ph ph-shield-check"></i> CC Agent</div><ul><li><i class="ph ph-key"></i>auth</li><li><i class="ph ph-arrows-split"></i>route</li><li><i class="ph ph-shield-check"></i>guard</li><li><i class="ph ph-gauge"></i>meter</li></ul></div>
         <div class="dg-ups">
           <div class="dg-up"><span>Claude · Bedrock <span class="m">us-east-1</span></span><i class="ph ph-check-circle ck"></i></div>
           <div class="dg-up"><span>Anthropic <span class="m">Direct failover</span></span><i class="ph ph-check-circle ck"></i></div>
           <div class="dg-up"><span style="color:var(--ink-faint)">GPT · Gemini · more</span><span class="avail soon">soon</span></div>
         </div>
       </div>
-      <div class="dg-wires"><svg viewBox="0 0 100 78" preserveAspectRatio="none"><path class="wire" d="M2,39 H40"/><path class="wire" d="M40,39 C70,39 70,13 98,13"/><path class="wire" d="M40,39 C70,39 70,39 98,39"/><path class="wire" d="M40,39 C70,39 70,65 98,65"/></svg></div>
+      <div class="dg-wires"><svg viewBox="0 0 100 78" preserveAspectRatio="none"><path class="wire" d="M2,39 H40"/><path class="wire" d="M40,39 C70,39 70,13 98,13"/><path class="wire" d="M40,39 C70,39 70,39 98,39"/><path class="wire" d="M40,39 C70,39 70,65 98,65"/><circle class="dg-dot" cx="70" cy="39" r="1.8"/></svg></div>
       <div class="dg-audit"><i class="ph ph-seal-check"></i> Every call recorded: vendor / model / region</div>
     </div>
   </div>
@@ -157,18 +157,21 @@
         <i class="ph ph-code ic"></i>
         <h3>Engineering</h3>
         <p>Ship in a day. Point one endpoint at us; existing agents keep working, with governance underneath.</p>
+        <div class="pillar-viz pv-pipe"><span>base_url</span><i class="ph ph-arrow-right"></i><b>CC Agent</b><i class="ph ph-arrow-right"></i><span>model</span></div>
         <span class="go">See the platform <i class="ph ph-arrow-right"></i></span>
       </a>
       <a class="pillar reveal" href="pricing.html">
         <i class="ph ph-chart-line-up ic"></i>
         <h3>Finance</h3>
         <p>Control the spend. Cost by team and project, budgets that stop overruns, no token markup on your own Bedrock.</p>
+        <div class="pillar-viz pv-bars"><div class="pvb"><span class="pvf" style="width:42%"></span></div><div class="pvb"><span class="pvf" style="width:29%"></span></div><div class="pvb"><span class="pvf" style="width:20%"></span></div><span class="pv-cap">spend by project · illustrative</span></div>
         <span class="go">See pricing <i class="ph ph-arrow-right"></i></span>
       </a>
       <a class="pillar reveal" href="trust.html">
         <i class="ph ph-shield-check ic"></i>
         <h3>Risk &amp; compliance</h3>
         <p>Pass the audit. Every call logged with the real model, region, and account, exportable for review.</p>
+        <div class="pillar-viz pv-audit"><i class="ph ph-seal-check"></i><span>vendor:bedrock · region:us-east-1 · audited:true</span></div>
         <span class="go">See trust <i class="ph ph-arrow-right"></i></span>
       </a>
     </div>

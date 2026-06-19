@@ -149,16 +149,43 @@
     </div>
     <div class="modes">
       <div class="mode reveal">
+        <div class="mode-glyph"><svg viewBox="0 0 120 60" aria-hidden="true">
+          <path class="mg-wire faint" d="M13,30 C55,30 60,15 95,15"/>
+          <path class="mg-wire faint" d="M13,30 C55,30 60,46 95,46"/>
+          <path class="mg-wire" d="M13,30 C55,30 60,30 95,30"/>
+          <circle class="mg-src" cx="10" cy="30" r="3.5"/>
+          <rect class="mg-node" x="95" y="9" width="14" height="12" rx="3"/>
+          <rect class="mg-node on" x="95" y="24" width="14" height="12" rx="3"/>
+          <rect class="mg-node" x="95" y="39" width="14" height="12" rx="3"/>
+        </svg></div>
         <p class="mk2">Mode</p>
         <h3>Balanced</h3>
         <p>Pick the best cost and latency tradeoff per call.</p>
       </div>
       <div class="mode reveal">
+        <div class="mode-glyph"><svg viewBox="0 0 120 60" aria-hidden="true">
+          <path class="mg-wire" d="M13,30 C55,30 60,15 95,15"/>
+          <circle class="mg-src" cx="10" cy="30" r="3.5"/>
+          <rect class="mg-node on" x="95" y="9" width="14" height="12" rx="3"/>
+          <circle class="mg-src" cx="102" cy="15" r="2"/>
+          <rect class="mg-node dim" x="95" y="24" width="14" height="12" rx="3"/>
+          <rect class="mg-node dim" x="95" y="39" width="14" height="12" rx="3"/>
+        </svg></div>
         <p class="mk2">Mode</p>
         <h3>Pinned</h3>
         <p>Force a specific model and region for reproducibility.</p>
       </div>
       <div class="mode reveal">
+        <div class="mode-glyph"><svg viewBox="0 0 120 60" aria-hidden="true">
+          <path class="mg-wire faint" d="M13,30 C50,30 55,15 95,15"/>
+          <path class="mg-wire" d="M13,30 C50,30 70,30 95,30"/>
+          <circle class="mg-src" cx="10" cy="30" r="3.5"/>
+          <rect class="mg-node" x="95" y="9" width="14" height="12" rx="3"/>
+          <path class="mg-x" d="M99,12 l6,6 M105,12 l-6,6"/>
+          <rect class="mg-node on" x="95" y="24" width="14" height="12" rx="3"/>
+          <path class="mg-ok" d="M99,30.5 l2.5,2.5 l4.5,-5"/>
+          <rect class="mg-node dim" x="95" y="39" width="14" height="12" rx="3"/>
+        </svg></div>
         <p class="mk2">Mode</p>
         <h3>Failover-first</h3>
         <p>Prefer primary, fall back across regions and Anthropic Direct on error.</p>

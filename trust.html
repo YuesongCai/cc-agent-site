@@ -99,12 +99,12 @@
 <section id="honesty">
   <div class="wrap">
     <div class="head reveal"><p class="eyebrow">What we will not do</p><h2 class="stitle">Honest by design.</h2><p class="ssub">The grey-market route is cheaper because it hides things. Those same shortcuts are what get a vendor cut at audit.</p></div>
-    <ul class="ticks reveal" style="max-width:62ch">
-      <li><i class="ph ph-check"></i>We never hide the real upstream model. Every call names the vendor and model in the log.</li>
-      <li><i class="ph ph-check"></i>We never silently downgrade. Multi-model routing is explicit and visible in the console.</li>
-      <li><i class="ph ph-check"></i>We never touch token counts. They come straight from the upstream response, for billing and audit alike.</li>
-      <li><i class="ph ph-check"></i>We never take anonymous production keys. Access binds to a vetted legal entity.</li>
-    </ul>
+    <div class="vow-grid reveal">
+      <div class="vow"><span class="vow-eyebrow">The model</span><div class="vow-no"><i class="ph ph-x"></i><s>Hides the real upstream model</s></div><div class="vow-yes"><i class="ph ph-check"></i>Names the vendor and model on every call</div></div>
+      <div class="vow"><span class="vow-eyebrow">Routing</span><div class="vow-no"><i class="ph ph-x"></i><s>Silently downgrades the model</s></div><div class="vow-yes"><i class="ph ph-check"></i>Explicit, and visible in the console</div></div>
+      <div class="vow"><span class="vow-eyebrow">Token counts</span><div class="vow-no"><i class="ph ph-x"></i><s>Edits the token counts</s></div><div class="vow-yes"><i class="ph ph-check"></i>Taken straight from the upstream response</div></div>
+      <div class="vow"><span class="vow-eyebrow">Access</span><div class="vow-no"><i class="ph ph-x"></i><s>Accepts anonymous production keys</s></div><div class="vow-yes"><i class="ph ph-check"></i>Bound to a vetted legal entity</div></div>
+    </div>
   </div>
 </section>
 

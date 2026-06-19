@@ -441,3 +441,68 @@ dialog.modal::backdrop{background:rgba(20,16,24,.5)}
 /* ===== footer + grid responsive (override earlier) ===== */
 @media(max-width:1024px){.fgrid{grid-template-columns:repeat(3,1fr)}.fbrand{grid-column:1/-1}.models-grid,.modes{grid-template-columns:1fr 1fr}}
 @media(max-width:640px){.fgrid{grid-template-columns:1fr 1fr}.fbrand{grid-column:1/-1}.models-grid,.modes{grid-template-columns:1fr}.rrow{grid-template-columns:1fr auto}.rrow .rprice{display:none}}
+
+/* ===== VISUALIZATION LAYER (icons, flows, glyphs) ===== */
+/* platform architecture — plane icons + role tags */
+.plane .pl-ic{font-size:23px;color:var(--accent);margin-bottom:14px;display:block}
+.plane .pl-role{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--fg-faint);display:block;margin-bottom:8px}
+.plane-data{border-left:2px solid var(--accent)}
+
+/* platform lifecycle + pricing steps — connected pipeline rail */
+.life{position:relative}
+.life li{position:relative}
+.life li:not(:last-child)::before{content:"";position:absolute;top:19px;left:19px;width:calc(100% + 16px);height:1px;background:var(--bd2);z-index:0}
+.life-node,.step-node{position:relative;z-index:1;display:flex}
+.life .n,.step .n{width:38px;height:38px;border-radius:999px;border:1px solid var(--bd2);background:var(--surface);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;color:var(--accent)}
+.life-ic,.step-ic{font-size:22px;color:var(--accent);margin:14px 0 2px;display:block}
+.life h3{margin:0 0 6px}
+.life li:last-child .n,.step:last-child .n{background:var(--accent);color:var(--ink);border-color:var(--accent)}
+.steps{position:relative}
+.step{position:relative;border-top:0;padding-top:0}
+.steps .step:not(:last-child)::before{content:"";position:absolute;top:19px;left:19px;width:calc(100% + 16px);height:1px;background:var(--bd2);z-index:0}
+.step h3{margin:0 0 6px}
+@media(max-width:1024px){.life li::before,.steps .step::before{display:none}.step{border-top:2px solid var(--bd2);padding-top:18px}}
+
+/* trust — "what we will not do" contrast ledger */
+.vow-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:28px;max-width:760px}
+.vow{background:var(--surface);padding:24px 26px;display:flex;flex-direction:column;gap:12px}
+.vow-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-faint)}
+.vow-no,.vow-yes{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.4}
+.vow-no{color:var(--ink-faint)}
+.vow-no s{text-decoration-color:var(--line-2)}
+.vow-no i{color:var(--ink-faint);flex:none;margin-top:3px}
+.vow-yes{color:var(--ink)}
+.vow-yes i{color:var(--plum);flex:none;margin-top:3px}
+@media(max-width:720px){.vow-grid{grid-template-columns:1fr}}
+
+/* models — routing-mode glyphs */
+.mode-glyph{margin-bottom:16px}
+.mode-glyph svg{width:100%;max-width:148px;height:auto;display:block}
+.mg-src{fill:var(--plum)}
+.mg-wire{fill:none;stroke:var(--plum);stroke-width:1.6}
+.mg-wire.faint{stroke-width:1.4;stroke-dasharray:3 3;opacity:.4}
+.mg-node{fill:none;stroke:var(--line-2);stroke-width:1.2}
+.mg-node.on{fill:var(--plum-soft);stroke:var(--plum)}
+.mg-node.dim{opacity:.35}
+.mg-x{fill:none;stroke:var(--ink-faint);stroke-width:1.3;stroke-linecap:round}
+.mg-ok{fill:none;stroke:var(--plum);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* home — committee pillar mini-visuals */
+.pillar-viz{margin-top:18px;font-family:var(--mono);font-size:11px;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:11px 12px}
+.pv-pipe{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.pv-pipe i{color:var(--ink-faint);font-size:12px}
+.pv-pipe b{color:var(--plum);font-weight:500}
+.pv-bars{display:flex;flex-direction:column;gap:5px}
+.pvb{height:5px;background:var(--muted);border-radius:3px;overflow:hidden}
+.pvf{display:block;height:100%;background:var(--plum);border-radius:3px}
+.pv-cap{font-size:10px;color:var(--ink-faint);margin-top:3px;letter-spacing:.04em}
+.pv-audit{display:flex;align-items:center;gap:8px;line-height:1.45}
+.pv-audit i{color:var(--plum);font-size:15px;flex:none}
+
+/* home — hero gateway pill icons + live-traffic dot */
+.dg-gw ul li{display:flex;align-items:center;justify-content:center;gap:4px}
+.dg-gw ul li i{font-size:10px}
+.dg-dot{fill:var(--plum)}
+@keyframes dgflow{0%{cx:42px;opacity:0}12%{opacity:1}88%{opacity:1}100%{cx:97px;opacity:0}}
+.dg-dot{animation:dgflow 3.4s linear infinite}
+@media(prefers-reduced-motion:reduce){.dg-dot{animation:none}}
