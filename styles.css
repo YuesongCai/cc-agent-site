@@ -473,6 +473,21 @@ dialog.modal::backdrop{background:rgba(20,16,24,.5)}
 .plane .pl-role{font-family:var(--mono);font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--fg-faint);display:block;margin-bottom:8px}
 .plane-data{border-left:2px solid var(--accent)}
 
+/* pricing — vertical steps (left heading + right vertical timeline) */
+.start-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.steps-v{list-style:none;display:flex;flex-direction:column;gap:0;position:relative}
+.steps-v li{display:flex;gap:18px;position:relative;padding-bottom:32px}
+.steps-v li:last-child{padding-bottom:0}
+.steps-v li:not(:last-child)::before{content:"";position:absolute;left:18px;top:38px;bottom:0;width:1.5px;background:var(--bd2)}
+.sv-dot{position:relative;z-index:1;flex-shrink:0}
+.sv-dot .n{width:38px;height:38px;border-radius:999px;border:1px solid var(--bd2);background:var(--surface);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;color:var(--accent)}
+.steps-v li:last-child .sv-dot .n{background:var(--accent);color:var(--ink);border-color:var(--accent)}
+.sv-body{padding-top:6px}
+.sv-ic{font-size:20px;color:var(--accent);margin-bottom:4px;display:block}
+.sv-body h3{font-family:var(--serif);font-size:18px;font-weight:500;margin:0 0 6px}
+.sv-body p{font-size:14px;color:var(--fg-soft);line-height:1.5}
+@media(max-width:1024px){.start-layout{grid-template-columns:1fr}}
+
 /* platform lifecycle + pricing steps — connected pipeline rail */
 .life{position:relative}
 .life li{position:relative}
