@@ -433,7 +433,7 @@ dialog.modal::backdrop{background:rgba(20,16,24,.5)}
 .plogo img{width:30px;height:30px;object-fit:contain;filter:grayscale(1) opacity(.46);transition:filter .3s}
 .plogo.lg img{width:42px;height:42px}
 .pname{font-family:var(--serif);font-size:16px;display:flex;flex-direction:column;line-height:1.2}
-.psub{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--ink-faint);margin-top:3px;text-transform:uppercase}
+.prsub{font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--ink-faint);margin-top:3px;text-transform:uppercase}
 .pdot{width:9px;height:9px;border-radius:999px;justify-self:end;flex:none}
 .pdot.live{background:var(--plum);box-shadow:0 0 0 3px var(--plum-soft)}
 .pdot.soon{border:1.5px solid var(--ink-faint)}
@@ -455,7 +455,7 @@ dialog.modal::backdrop{background:rgba(20,16,24,.5)}
   .rail-group,.rail-div,.rail-cap{display:none}
   .prow{display:flex;align-items:center;gap:9px;flex:0 0 auto;scroll-snap-align:start;width:auto;border-left:0;border:1px solid var(--line);padding:10px 14px}
   .prow.on{border-color:var(--plum)}
-  .psub{display:none}
+  .prsub{display:none}
 }
 
 /* ===== DOCS ===== */
