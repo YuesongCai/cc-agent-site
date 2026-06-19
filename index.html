@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Hanken+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
-<link rel="stylesheet" href="styles.css?v=20260619c" />
+<link rel="stylesheet" href="styles.css?v=20260619d" />
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","@id":"https://ccagent.example/#org","name":"CC Agent","url":"https://ccagent.example/","logo":"https://ccagent.example/og.svg","description":"The governance gateway for enterprise AI: route, govern, and audit every call your agents make."},
@@ -72,18 +72,23 @@
   </div>
 </section>
 
-<section class="strip" aria-label="Built on">
-  <div class="wrap strip-in reveal">
-    <span class="strip-label">Built on</span>
-    <div class="strip-logos">
-      <img src="https://cdn.simpleicons.org/amazonwebservices/5A5060" alt="Amazon Web Services" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'strip-word',textContent:'AWS'}))" />
-      <span class="strip-dot"></span><span class="strip-word">Amazon&nbsp;Bedrock</span>
-      <span class="strip-dot"></span>
-      <img src="https://cdn.simpleicons.org/anthropic/5A5060" alt="Anthropic" style="height:18px" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'strip-word',textContent:'Anthropic'}))" />
-      <span class="strip-dot"></span><span class="strip-word">Claude</span>
-      <span class="strip-dot"></span><span class="strip-word" style="font-size:15px;font-family:var(--mono)">OpenAI-compatible API</span>
+<section class="strip" aria-label="The model landscape CC Agent is built to route across">
+  <div class="wrap"><p class="strip-eyebrow reveal">Model-agnostic by design</p></div>
+  <div class="marquee" aria-label="Model and cloud providers">
+    <div class="marquee-track">
+      <img class="mq-logo" src="logos/anthropic.svg" alt="Anthropic" />
+      <img class="mq-logo" src="logos/openai.svg" alt="OpenAI" />
+      <img class="mq-logo" src="logos/gemini.svg" alt="Google Gemini" />
+      <img class="mq-logo" src="logos/aws.svg" alt="Amazon Web Services" />
+      <img class="mq-logo" src="logos/azure.svg" alt="Microsoft Azure" />
+      <img class="mq-logo" src="logos/google.svg" alt="Google Cloud" />
+      <img class="mq-logo" src="logos/meta.svg" alt="Meta Llama" />
+      <img class="mq-logo" src="logos/mistral.svg" alt="Mistral AI" />
+      <img class="mq-logo" src="logos/nvidia.svg" alt="NVIDIA" />
+      <img class="mq-logo" src="logos/huggingface.svg" alt="Hugging Face" />
     </div>
   </div>
+  <div class="wrap"><p class="strip-note reveal">Claude on Amazon Bedrock live today · more providers as they come online, subject to authorization</p></div>
 </section>
 
 <section id="product">
@@ -208,6 +213,6 @@
 </main>
 
 <div id="site-footer"></div>
-<script src="main.js?v=20260619c"></script>
+<script src="main.js?v=20260619d"></script>
 </body>
 </html>

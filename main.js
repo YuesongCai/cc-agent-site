@@ -234,9 +234,18 @@
     requestAnimationFrame(function () { reveals.forEach(function (e) { if (e.getBoundingClientRect().top < innerHeight * 0.95) { e.classList.add('in'); io.unobserve(e); } }); });
   }
 
+  // ---- LOGO MARQUEE: clone track once for a seamless -50% loop ----
+  function wireMarquee() {
+    var track = document.querySelector('.marquee-track');
+    if (!track) return;
+    [].slice.call(track.children).forEach(function (node) {
+      var c = node.cloneNode(true); c.setAttribute('aria-hidden', 'true'); track.appendChild(c);
+    });
+  }
+
   function init() {
     buildNav(); buildFooter(); buildModals();
-    wireModals(); wireTabs(); wireFaq(); wireReveal();
+    wireModals(); wireTabs(); wireFaq(); wireMarquee(); wireReveal();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
