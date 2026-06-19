@@ -25,7 +25,7 @@
     ['Product', [['Platform', 'platform.html'], ['Models', 'models.html'], ['Pricing', 'pricing.html']]],
     ['Company', [['About', 'company.html'], ['Careers', 'careers.html']]],
     ['Trust', [['Trust center', 'trust.html'], ['Security', 'security.html']]],
-    ['Legal', [['Privacy', 'privacy.html'], ['Terms', 'terms.html'], ['Contact', 'contact.html']]],
+    ['Legal', [['Privacy', 'privacy.html'], ['Terms', 'terms.html'], ['Disclaimer', 'disclaimer.html'], ['Contact', 'contact.html']]],
   ];
 
   var REGION_LINE = 'Claude on Amazon Bedrock (multi-region) with Anthropic Direct failover. Channel availability subject to AWS and Anthropic authorization. AWS global partition; no China-region deployment.';
